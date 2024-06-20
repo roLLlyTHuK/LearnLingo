@@ -5,16 +5,14 @@ import { AppWrapper } from './App.styled';
 import HomePage from './pages/HomePage/HomePage';
 import TeachersPage from './pages/TeachersPage/TeachersPage';
 
-
-
 function App() {
-
   return (
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/teachers" element={<TeachersPage />} />
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="teachers" element={<TeachersPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

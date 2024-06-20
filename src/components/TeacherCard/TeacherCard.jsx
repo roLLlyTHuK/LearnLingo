@@ -1,26 +1,38 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import {
   Avatar,
   Container,
   LevelsList,
   TeacherInfo,
+  SubTitle,
+  AddInfo,
   TopLine,
 } from './TeacherCard.styled';
+import Reviews from '../Reviews/Reviews';
 
 const TeacherCard = ({ teacher }) => {
+  const languagesList = teacher.languages.reduce((acc, langue, index) => {
+    if (index < teacher.languages.length - 1) {
+      return [...acc, <span key={index}>{langue}</span>, ', '];
+    } else {
+      return [...acc, <span key={index}>{langue}</span>];
+    }
+  }, []);
+
+  const [showAddInfo, setShowAddInfo] = useState(false);
+
+  const handleShowAddInfo = () => {
+    setShowAddInfo(!showAddInfo);
+  };
+
   return (
     <Container>
       <Avatar src={teacher.avatar_url} alt={teacher.name} />
 
       <TeacherInfo>
         <TopLine>
-          <div className="name">
-            <p>Languages</p>
-            <h3>
-              {teacher.name} {teacher.surname}
-            </h3>
-          </div>
+          <SubTitle style={{ marginRight: '192px' }}>Languages</SubTitle>
           <ul>
             <li>
               <p>Lessons online</p>
@@ -37,10 +49,26 @@ const TeacherCard = ({ teacher }) => {
           </ul>
           <div>Heart</div>
         </TopLine>
-        <p>Speaks: {teacher.languages}</p>
-        <p>Lesson Info: {teacher.lesson_info} </p>
-        <p>Conditions: {teacher.conditions} </p>
-        <Link to={`/teachers/${teacher.id}`}>Read more</Link>
+        <h3>
+          {teacher.name} {teacher.surname}
+        </h3>
+        <SubTitle>
+          Speaks: <span>{languagesList}</span>
+        </SubTitle>
+        <SubTitle>
+          Lesson Info: <span> {teacher.lesson_info}</span>
+        </SubTitle>
+        <SubTitle>
+          Conditions: <span>{teacher.conditions}</span>
+        </SubTitle>
+
+        {!showAddInfo && <Link onClick={handleShowAddInfo}>Read more</Link>}
+        {showAddInfo && (
+          <AddInfo>
+            <p>{teacher.experience}</p>
+            <Reviews reviews={teacher.reviews} />
+          </AddInfo>
+        )}
         <LevelsList>
           {teacher.levels.map((level, index) => (
             <li key={index}>#{level}</li>

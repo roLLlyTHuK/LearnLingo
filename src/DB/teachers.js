@@ -15,11 +15,13 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Alice',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment: 'John is an excellent teacher! I highly recommend him.',
       },
       {
         reviewer_name: 'Bob',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'John is very knowledgeable and patient. I enjoyed his classes.',
@@ -51,11 +53,13 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Eve',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment: 'Jane is an amazing teacher! She is patient and supportive.',
       },
       {
         reviewer_name: 'Frank',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment: "Jane's lessons were very helpful. I made good progress.",
       },
@@ -81,12 +85,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Grace',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'David explains things clearly and is knowledgeable in the subject.',
       },
       {
         reviewer_name: 'Henry',
+        reviewer_avatar: '',
         reviewer_rating: 3,
         comment:
           "David's teaching style didn't suit me, but he is still a good teacher.",
@@ -113,12 +119,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Emily',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'Sarah is a patient and helpful teacher. I enjoyed her lessons.',
       },
       {
         reviewer_name: 'Alex',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           "Sarah's teaching style is engaging and effective. Highly recommended.",
@@ -150,12 +158,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Sophia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Michael is an excellent teacher. He makes learning Spanish fun and engaging.',
       },
       {
         reviewer_name: 'Oliver',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made great progress with Michael's lessons. Highly recommended.",
@@ -182,12 +192,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Emma is an amazing teacher. Her lessons are interactive and engaging.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Emma's lessons. Highly recommended for French and Italian.",
@@ -214,12 +226,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Sophie',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Alexander is a patient and knowledgeable teacher. I have learned a lot from his lessons.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'I highly recommend Alexander. His lessons are engaging and well-structured.',
@@ -251,12 +265,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Ethan',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Sophia is an excellent teacher. Her lessons are fun and interactive.',
       },
       {
         reviewer_name: 'Ava',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Spanish and French skills significantly with Sophia's lessons.",
@@ -283,12 +299,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'Max is a dedicated and knowledgeable teacher. I enjoyed his German lessons.',
       },
       {
         reviewer_name: 'Noah',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'I highly recommend Max for German lessons. He explains concepts clearly and provides useful tips.',
@@ -315,12 +333,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Isabella is a fantastic teacher. Her lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with Isabella's lessons. Highly recommended.",
@@ -352,12 +372,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Sophie',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Daniel is an excellent teacher. His lessons are well-structured and enjoyable.',
       },
       {
         reviewer_name: 'Benjamin',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Daniel's lessons. Highly recommended for French learners.",
@@ -384,12 +406,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Jacob',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Olivia is an amazing Italian teacher. Her lessons are engaging and informative.',
       },
       {
         reviewer_name: 'Emily',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Italian skills significantly with Olivia's lessons. Highly recommended.",
@@ -422,12 +446,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Ava',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Ethan is an excellent teacher. His lessons are engaging and tailored to individual needs.',
       },
       {
         reviewer_name: 'Noah',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'I highly recommend Ethan. He makes learning languages enjoyable and productive.',
@@ -454,12 +480,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Emily is an excellent teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Emily's lessons. Highly recommended for French and German learners.",
@@ -491,12 +519,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Jacob is an excellent Mandarin teacher. His lessons are clear, structured, and enjoyable.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Mandarin skills significantly with Jacob's lessons. Highly recommended.",
@@ -529,12 +559,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Noah',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Ava is a fantastic teacher. Her lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Sophia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with Ava's lessons. Highly recommended.",
@@ -561,12 +593,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Benjamin is an excellent teacher. His lessons are engaging and tailored to individual needs.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           'I highly recommend Benjamin. He makes learning Spanish enjoyable and productive.',
@@ -593,12 +627,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Chloe is an amazing Vietnamese teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Chloe's lessons. Highly recommended for Vietnamese learners.",
@@ -631,12 +667,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Henry is an excellent teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Benjamin',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with Henry's lessons. Highly recommended.",
@@ -663,12 +701,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Sophie',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Emily is an excellent French teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Noah',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Emily's lessons. Highly recommended for French learners.",
@@ -700,12 +740,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Isabella is an amazing Mandarin teacher. Her lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Mandarin skills significantly with Isabella's lessons. Highly recommended.",
@@ -733,12 +775,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Ava',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Oliver is a fantastic teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Noah',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with Oliver's lessons. Highly recommended.",
@@ -770,12 +814,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Sophia is an excellent French teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Sophia's lessons. Highly recommended for French learners.",
@@ -802,12 +848,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Lucas is an excellent Mandarin teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Mandarin skills significantly with Lucas's lessons. Highly recommended.",
@@ -840,12 +888,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Oliver',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Sophie is an excellent teacher. Her lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with Sophie's lessons. Highly recommended.",
@@ -872,12 +922,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Emma is an excellent French teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Emma's lessons. Highly recommended for French learners.",
@@ -904,12 +956,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Daniel is an excellent Mandarin teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Mandarin skills significantly with Daniel's lessons. Highly recommended.",
@@ -941,12 +995,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Oliver',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'James is an excellent teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have made significant progress with James's lessons. Highly recommended.",
@@ -973,12 +1029,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Liam',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'Natalie is an excellent French teacher. Her lessons are well-structured and informative.',
       },
       {
         reviewer_name: 'Mia',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have learned a lot from Natalie's lessons. Highly recommended for French learners.",
@@ -1005,12 +1063,14 @@ export const teachers = [
     reviews: [
       {
         reviewer_name: 'Olivia',
+        reviewer_avatar: '',
         reviewer_rating: 5,
         comment:
           'William is an excellent Mandarin teacher. His lessons are engaging and effective.',
       },
       {
         reviewer_name: 'Daniel',
+        reviewer_avatar: '',
         reviewer_rating: 4,
         comment:
           "I have improved my Mandarin skills significantly with William's lessons. Highly recommended.",

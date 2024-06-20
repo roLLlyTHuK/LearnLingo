@@ -1,13 +1,24 @@
+import { useState } from 'react';
 import { teachers } from '../../DB/teachers';
 import TeacherCard from '../TeacherCard/TeacherCard';
+import { LoadMoreBtn } from './TeachersList.styled';
 
 const TeacherList = () => {
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
   return (
-    <div>
-      {teachers.map((teacher, index) => (
+    <>
+      {teachers.slice(0, visibleCount).map((teacher, index) => (
         <TeacherCard key={index} teacher={teacher} />
       ))}
-    </div>
+      {visibleCount < teachers.length && (
+        <LoadMoreBtn onClick={handleLoadMore}>Load More</LoadMoreBtn>
+      )}
+    </>
   );
 };
 

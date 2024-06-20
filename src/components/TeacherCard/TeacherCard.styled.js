@@ -17,29 +17,38 @@ export const Avatar = styled.img`
 `;
 
 export const TeacherInfo = styled.div`
+  width: 968px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 8px;
+
+  span {
+    font-family: 'Roboto-Medium', sans-serif;
+    color: var(--primary-text-color);
+  }
+`;
+
+export const Name = styled.h3`
+  font-family: 'Roboto-Medium', sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--primary-text-color);
+`;
+
+export const SubTitle = styled.p`
+  color: var(--subtitle-text-color);
 `;
 
 export const TopLine = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: start;
-
   padding: 0;
-
-  .name {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 8px;
-    margin-right: 149px;
-  }
 
   ul {
     display: flex;
@@ -71,4 +80,12 @@ export const LevelsList = styled.ul`
     border-radius: 35px;
     border: 1px solid rgba(18, 20, 23, 0.2);
   }
+`;
+
+export const AddInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
 `;
