@@ -9,6 +9,8 @@ import {
   AddInfo,
   TopLine,
 } from './TeacherCard.styled';
+import { FaStar } from 'react-icons/fa';
+import { FaRegHeart } from 'react-icons/fa6';
 import Reviews from '../Reviews/Reviews';
 
 const TeacherCard = ({ teacher }) => {
@@ -41,13 +43,14 @@ const TeacherCard = ({ teacher }) => {
               <p>Lessons done: {teacher.lessons_done}</p>
             </li>
             <li>
+              <FaStar size={16} color="#FFC531" />
               <p>Rating: {teacher.rating}</p>
             </li>
             <li>
               <p>Price/1 hour: ${teacher.price_per_hour}</p>
             </li>
           </ul>
-          <div>Heart</div>
+          <FaRegHeart size={22} />
         </TopLine>
         <h3>
           {teacher.name} {teacher.surname}
@@ -74,6 +77,7 @@ const TeacherCard = ({ teacher }) => {
             <li key={index}>#{level}</li>
           ))}
         </LevelsList>
+        {showAddInfo && <button>Book trial lesson</button>}
       </TeacherInfo>
     </Container>
   );

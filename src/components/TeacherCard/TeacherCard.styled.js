@@ -40,6 +40,8 @@ export const Name = styled.h3`
 
 export const SubTitle = styled.p`
   color: var(--subtitle-text-color);
+  padding: 0;
+  margin: 0;
 `;
 
 export const TopLine = styled.div`
@@ -55,13 +57,26 @@ export const TopLine = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 32px;
     padding: 0;
     margin-right: 64px;
 
     li {
-      padding: 1px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      padding: 1px 16px;
+
       margin: 0;
+
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    li:not(:last-child) {
+      border-right: 1px solid rgba(12, 14, 17, 0.2);
     }
   }
 `;

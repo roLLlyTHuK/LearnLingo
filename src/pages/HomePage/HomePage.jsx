@@ -7,8 +7,15 @@ import {
   List,
   TopWrapper,
 } from './HomePage.styled';
+import CountUp from 'react-countup';
 
 const HomePage = () => {
+  const data = [
+    { value: 32000, text: 'Experienced tutors' },
+    { value: 300000, text: '5-star tutor reviews' },
+    { value: 120, text: 'Subjects taught' },
+    { value: 200, text: 'Tutor nationalities' },
+  ];
   return (
     <>
       <TopWrapper>
@@ -29,22 +36,20 @@ const HomePage = () => {
         </HeroImageBox>
       </TopWrapper>
       <List>
-        <li>
-          <h3>32,000 +</h3>
-          <p>Experienced tutors</p>
-        </li>
-        <li>
-          <h3>300,000 +</h3>
-          <p>5-star tutor reviews</p>
-        </li>
-        <li>
-          <h3>120 +</h3>
-          <p>Subjects taught</p>
-        </li>
-        <li>
-          <h3>200 +</h3>
-          <p>Tutor nationalities</p>
-        </li>
+        {data.map((item, index) => (
+          <li key={index}>
+            <h3>
+              <CountUp
+                start={0}
+                end={item.value}
+                duration={2.75}
+                separator=","
+              />
+              {' +'}
+            </h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
       </List>
     </>
   );

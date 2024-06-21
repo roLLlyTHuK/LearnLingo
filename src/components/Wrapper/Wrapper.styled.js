@@ -6,5 +6,6 @@ export const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 64px;
-  width: 100%;
+  width: 1440px;
+  margin: 0 auto;
 `;

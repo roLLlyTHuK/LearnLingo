@@ -19,8 +19,9 @@ export const HeroContent = styled.div`
   width: 720px;
 
   h1 {
-    font-family: 'Roboto-Medium', sans-serif;
+    font-family: 'Roboto-Medium';
     font-size: 48px;
+    font-weight: 600;
     line-height: 56px;
     letter-spacing: -0.02em;
     text-align: left;
@@ -29,6 +30,7 @@ export const HeroContent = styled.div`
     span {
       background-color: var(--bg-secondary-color);
       font-family: 'Roboto-Regular', sans-serif;
+      font-weight: 400;
       font-style: italic;
     }
   }
@@ -74,6 +76,16 @@ export const HeroImageBox = styled.div`
   img:nth-child(1) {
     top: 80px;
     left: 114px;
+    animation: greeting 1.5s ease-in-out;
+  }
+
+  @keyframes greeting {
+    0% {
+      transform: translatey(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 
   img:nth-child(2) {
@@ -83,6 +95,7 @@ export const HeroImageBox = styled.div`
 `;
 
 export const List = styled.ul`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
