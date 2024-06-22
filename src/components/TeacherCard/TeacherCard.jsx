@@ -12,6 +12,7 @@ import {
 import { FaStar } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa6';
 import Reviews from '../Reviews/Reviews';
+import Popup from '../Popup/Popup';
 
 const TeacherCard = ({ teacher }) => {
   const languagesList = teacher.languages.reduce((acc, langue, index) => {
@@ -23,6 +24,15 @@ const TeacherCard = ({ teacher }) => {
   }, []);
 
   const [showAddInfo, setShowAddInfo] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   const handleShowAddInfo = () => {
     setShowAddInfo(!showAddInfo);
@@ -77,7 +87,14 @@ const TeacherCard = ({ teacher }) => {
             <li key={index}>#{level}</li>
           ))}
         </LevelsList>
-        {showAddInfo && <button>Book trial lesson</button>}
+        {showAddInfo && <button onClick={openPopup}>Book trial lesson</button>}
+        {isPopupOpen && (
+          <Popup
+            isModalOpen={isPopupOpen}
+            closeModal={closePopup}
+            teacher={teacher}
+          />
+        )}
       </TeacherInfo>
     </Container>
   );
