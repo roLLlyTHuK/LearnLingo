@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {
   HeaderContainer,
   LoginBox,
@@ -10,14 +10,18 @@ import {
 } from './Header.styled';
 import Logo from '../../assets/ukraine.png';
 import { FiLogIn } from 'react-icons/fi';
+import { FiLogOut } from 'react-icons/fi';
 import { useState } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import { useAuth } from '../../context/AuthContext';
 
 export const Header = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isSignUpFormOpen, setIsSignUpFormOpen] = useState(false);
   const location = useLocation();
+  const { currentUser, logout } = useAuth();
+
   const openLoginForm = () => {
     setIsLoginFormOpen(true);
   };
@@ -55,24 +59,43 @@ export const Header = () => {
         >
           Teachers
         </NavigationLink>
+        {currentUser && (
+          <NavigationLink
+            to="/favorites"
+            className={isActive('/favorites') ? 'active' : ''}
+          >
+            Favorites
+          </NavigationLink>
+        )}
       </Navigation>
       <UserBox>
-        <LoginBox onClick={openLoginForm}>
-          <FiLogIn size={20} color={'#f4c550'} />
-          <span>Login</span>
-        </LoginBox>
-        {isLoginFormOpen && (
-          <LoginForm
-            isModalOpen={isLoginFormOpen}
-            closeModal={closeLoginForm}
-          />
-        )}
-        <SignupBtn onClick={openSignUpForm}>Registration</SignupBtn>
-        {isSignUpFormOpen && (
-          <RegistrationForm
-            isModalOpen={isSignUpFormOpen}
-            closeModal={closeSignUpForm}
-          />
+        {currentUser ? (
+          <LoginBox onClick={logout}>
+            {currentUser.email}
+            <FiLogOut size={20} color={'#f4c550'} />
+          </LoginBox>
+        ) : (
+          <>
+            <LoginBox onClick={openLoginForm}>
+              <FiLogIn size={20} color={'#f4c550'} />
+              <span>Login</span>
+            </LoginBox>
+            {isLoginFormOpen && (
+              <LoginForm
+                isModalOpen={isLoginFormOpen}
+                closeModal={closeLoginForm}
+              />
+            )}
+
+            <SignupBtn onClick={openSignUpForm}>Registration</SignupBtn>
+
+            {isSignUpFormOpen && (
+              <RegistrationForm
+                isModalOpen={isSignUpFormOpen}
+                closeModal={closeSignUpForm}
+              />
+            )}
+          </>
         )}
       </UserBox>
     </HeaderContainer>

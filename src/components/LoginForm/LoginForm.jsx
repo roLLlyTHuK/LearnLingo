@@ -13,8 +13,11 @@ import {
   HeaderBox,
   LoginFormContainer,
 } from './LoginForm.styled';
+import { useAuth } from '../../context/AuthContext';
 
 const LoginForm = ({ isModalOpen, closeModal }) => {
+  const { login } = useAuth();
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -37,10 +40,14 @@ const LoginForm = ({ isModalOpen, closeModal }) => {
     mode: 'onChange',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    closeModal();
-    alert('Form submitted successfully!');
+  const onSubmit = async ({ email, password }, e) => {
+    e.preventDefault();
+    try {
+      await login(email, password);
+      closeModal();
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
   };
 
   if (!isModalOpen) return null;

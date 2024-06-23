@@ -13,8 +13,11 @@ import {
   HeaderBox,
   RegistrationFormContainer,
 } from './RegistrationForm.styled';
+import { useAuth } from '../../context/AuthContext';
 
 const RegistrationForm = ({ isModalOpen, closeModal }) => {
+  const { signup } = useAuth();
+
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -41,10 +44,16 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
     mode: 'onChange',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    closeModal();
-    alert('Form submitted successfully!');
+  const onSubmit = async ({ name, email, password }, e) => {
+    e.preventDefault();
+    try {
+      await signup(name, email, password);
+
+      closeModal();
+      alert('Form submitted successfully!');
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   };
 
   if (!isModalOpen) return null;
@@ -58,7 +67,7 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
               <IoClose size={32} />
             </CloseBtn>
             <HeaderBox>
-              <h2>Log In</h2>
+              <h2>Sign Up</h2>
               <p>
                 Welcome back! Please enter your credentials to access your
                 account and continue your search for an teacher.
