@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import './Popup.styled';
 import Modal from '../Modal/Modal';
 import {
+  Button,
   CloseBtn,
   ErrorMessage,
   Field,
@@ -146,7 +147,7 @@ const Popup = ({ isModalOpen, closeModal, teacher }) => {
                   )}
                 </Field>
               </div>
-              <button type="submit">Book</button>
+              <Button type="submit">Book</Button>
             </Form>
           </PopupContainer>
         </Modal>

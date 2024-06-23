@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
   Avatar,
@@ -8,6 +7,8 @@ import {
   SubTitle,
   AddInfo,
   TopLine,
+  PopupBtn,
+  MoreLink,
 } from './TeacherCard.styled';
 import { FaStar } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa6';
@@ -57,7 +58,9 @@ const TeacherCard = ({ teacher }) => {
               <p>Rating: {teacher.rating}</p>
             </li>
             <li>
-              <p>Price/1 hour: ${teacher.price_per_hour}</p>
+              <p>
+                Price/1 hour: <span>${teacher.price_per_hour}</span>
+              </p>
             </li>
           </ul>
           <FaRegHeart size={22} />
@@ -75,7 +78,9 @@ const TeacherCard = ({ teacher }) => {
           Conditions: <span>{teacher.conditions}</span>
         </SubTitle>
 
-        {!showAddInfo && <Link onClick={handleShowAddInfo}>Read more</Link>}
+        {!showAddInfo && (
+          <MoreLink onClick={handleShowAddInfo}>Read more</MoreLink>
+        )}
         {showAddInfo && (
           <AddInfo>
             <p>{teacher.experience}</p>
@@ -87,7 +92,9 @@ const TeacherCard = ({ teacher }) => {
             <li key={index}>#{level}</li>
           ))}
         </LevelsList>
-        {showAddInfo && <button onClick={openPopup}>Book trial lesson</button>}
+        {showAddInfo && (
+          <PopupBtn onClick={openPopup}>Book trial lesson</PopupBtn>
+        )}
         {isPopupOpen && (
           <Popup
             isModalOpen={isPopupOpen}

@@ -27,7 +27,7 @@ export const Navigation = styled.nav`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 28px;
+  gap: 4px;
 `;
 
 export const NavigationLink = styled(Link)`
@@ -37,6 +37,23 @@ export const NavigationLink = styled(Link)`
   line-height: 20px;
   letter-spacing: 0em;
   color: var(--primary-text-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--btn-color);
+    font-weight: 700;
+  }
+
+  &.active {
+    border-color: var(--btn-color);
+    font-weight: 700;
+  }
 `;
 
 export const UserBox = styled.div`
@@ -47,12 +64,18 @@ export const UserBox = styled.div`
   gap: 14px;
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  border: none;
+
+  &:hover,
+  &:focus {
+    color: var(--btn-color);
+  }
 `;
 
 export const SignupBtn = styled.button`
@@ -70,4 +93,9 @@ export const SignupBtn = styled.button`
   border: none;
   border-radius: 12px;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--btn-color);
+  }
 `;

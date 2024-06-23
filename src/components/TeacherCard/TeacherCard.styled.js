@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -30,20 +31,6 @@ export const TeacherInfo = styled.div`
   }
 `;
 
-export const Name = styled.h3`
-  font-family: 'Roboto-Medium', sans-serif;
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: var(--primary-text-color);
-`;
-
-export const SubTitle = styled.p`
-  color: var(--subtitle-text-color);
-  padding: 0;
-  margin: 0;
-`;
-
 export const TopLine = styled.div`
   width: 100%;
   display: flex;
@@ -73,12 +60,29 @@ export const TopLine = styled.div`
         padding: 0;
         margin: 0;
       }
+
+      span {
+        color: #38cd3e;
+      }
     }
 
     li:not(:last-child) {
       border-right: 1px solid rgba(12, 14, 17, 0.2);
     }
   }
+`;
+
+export const SubTitle = styled.p`
+  color: var(--subtitle-text-color);
+  padding: 0;
+  margin: 0;
+`;
+
+export const MoreLink = styled(Link)`
+  text-decoration: underline;
+  font-style: 16px;
+  line-height: 24px;
+  margin: 8px 0 24px 0;
 `;
 
 export const LevelsList = styled.ul`
@@ -88,6 +92,7 @@ export const LevelsList = styled.ul`
   align-items: center;
   gap: 8px;
   padding: 0;
+  margin-bottom: 24px;
 
   li {
     padding: 8px 12px;
@@ -103,4 +108,25 @@ export const AddInfo = styled.div`
   justify-content: start;
   align-items: start;
   gap: 4px;
+`;
+
+export const PopupBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 48px;
+  font-family: 'Roboto-Bold', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  border: none;
+  background-color: var(--btn-color);
+  border-radius: 12px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: var(--btn-hover-color);
+  }
 `;

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   HeaderContainer,
   LoginBox,
@@ -10,8 +10,32 @@ import {
 } from './Header.styled';
 import Logo from '../../assets/ukraine.png';
 import { FiLogIn } from 'react-icons/fi';
+import { useState } from 'react';
+import LoginForm from '../LoginForm/LoginForm';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 export const Header = () => {
+  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+  const [isSignUpFormOpen, setIsSignUpFormOpen] = useState(false);
+  const location = useLocation();
+  const openLoginForm = () => {
+    setIsLoginFormOpen(true);
+  };
+
+  const closeLoginForm = () => {
+    setIsLoginFormOpen(false);
+  };
+
+  const openSignUpForm = () => {
+    setIsSignUpFormOpen(true);
+  };
+
+  const closeSignUpForm = () => {
+    setIsSignUpFormOpen(false);
+  };
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <HeaderContainer>
       <LogoLink to="/home">
@@ -19,15 +43,37 @@ export const Header = () => {
         <span>LearnLingo</span>
       </LogoLink>
       <Navigation>
-        <NavigationLink to="/home">Home</NavigationLink>
-        <NavigationLink to="/teachers">Teachers</NavigationLink>
+        <NavigationLink
+          to="/home"
+          className={isActive('/home') ? 'active' : ''}
+        >
+          Home
+        </NavigationLink>
+        <NavigationLink
+          to="/teachers"
+          className={isActive('/teachers') ? 'active' : ''}
+        >
+          Teachers
+        </NavigationLink>
       </Navigation>
       <UserBox>
-        <LoginBox>
+        <LoginBox onClick={openLoginForm}>
           <FiLogIn size={20} color={'#f4c550'} />
-          <Link to="/login">Log In</Link>
+          <span>Login</span>
         </LoginBox>
-        <SignupBtn>Registration</SignupBtn>
+        {isLoginFormOpen && (
+          <LoginForm
+            isModalOpen={isLoginFormOpen}
+            closeModal={closeLoginForm}
+          />
+        )}
+        <SignupBtn onClick={openSignUpForm}>Registration</SignupBtn>
+        {isSignUpFormOpen && (
+          <RegistrationForm
+            isModalOpen={isSignUpFormOpen}
+            closeModal={closeSignUpForm}
+          />
+        )}
       </UserBox>
     </HeaderContainer>
   );
