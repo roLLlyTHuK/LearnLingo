@@ -1,10 +1,11 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { getAuth } from 'firebase/auth';
 
 const PublicRoute = () => {
-  const { isAuthenticated } = useAuth();
+  const auth = getAuth();
+  const user = auth.currentUser;
 
-  return !isAuthenticated ? <Outlet /> : <Navigate to="/home" />;
+  return !user ? <Outlet /> : <Navigate to="/home" />;
 };
 
 export default PublicRoute;

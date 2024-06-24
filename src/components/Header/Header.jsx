@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { redirect, useLocation } from 'react-router-dom';
 import {
   HeaderContainer,
   LoginBox,
@@ -38,6 +38,9 @@ export const Header = () => {
     setIsSignUpFormOpen(false);
   };
 
+  const handleLogout = () => {
+    logout();
+  };
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -59,10 +62,21 @@ export const Header = () => {
         >
           Teachers
         </NavigationLink>
-        {currentUser && (
+        {currentUser ? (
           <NavigationLink
             to="/favorites"
             className={isActive('/favorites') ? 'active' : ''}
+          >
+            Favorites
+          </NavigationLink>
+        ) : (
+          <NavigationLink
+            to="/favorites"
+            style={{
+              pointerEvents: 'none',
+              cursor: 'default',
+              color: 'var(--subtitle-text-color)',
+            }}
           >
             Favorites
           </NavigationLink>
@@ -70,8 +84,9 @@ export const Header = () => {
       </Navigation>
       <UserBox>
         {currentUser ? (
-          <LoginBox onClick={logout}>
+          <LoginBox onClick={handleLogout}>
             {currentUser.displayName}
+            Log Out
             <FiLogOut size={20} color={'#f4c550'} />
           </LoginBox>
         ) : (

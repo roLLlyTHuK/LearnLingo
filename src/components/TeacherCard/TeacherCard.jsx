@@ -16,13 +16,7 @@ import Reviews from '../Reviews/Reviews';
 import Popup from '../Popup/Popup';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../../firebase';
-import {
-  arrayRemove,
-  arrayUnion,
-  doc,
-  getDoc,
-  updateDoc,
-} from 'firebase/firestore';
+import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const TeacherCard = ({ teacher }) => {
   const languagesList = teacher.languages.reduce((acc, langue, index) => {
