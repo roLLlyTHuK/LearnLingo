@@ -71,7 +71,7 @@ export const Header = () => {
       <UserBox>
         {currentUser ? (
           <LoginBox onClick={logout}>
-            {currentUser.email}
+            {currentUser.displayName}
             <FiLogOut size={20} color={'#f4c550'} />
           </LoginBox>
         ) : (

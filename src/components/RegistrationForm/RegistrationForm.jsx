@@ -14,6 +14,9 @@ import {
   RegistrationFormContainer,
 } from './RegistrationForm.styled';
 import { useAuth } from '../../context/AuthContext';
+import { firestore } from '../../firebase';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 const RegistrationForm = ({ isModalOpen, closeModal }) => {
   const { signup } = useAuth();
@@ -47,8 +50,16 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
   const onSubmit = async ({ name, email, password }, e) => {
     e.preventDefault();
     try {
-      await signup(name, email, password);
-
+      await signup(email, password);
+      const auth = getAuth();
+      const user = auth.currentUser;
+      await updateProfile(user, { displayName: name });
+      await setDoc(doc(firestore, 'users', user.uid), {
+        email: user.email,
+        name: user.displayName,
+        id: user.uid,
+        favorites: [],
+      });
       closeModal();
       alert('Form submitted successfully!');
     } catch (error) {

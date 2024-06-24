@@ -1,5 +1,11 @@
+import FavoritesList from '../../components/FavoritesList/FavoritesList';
+
 const FavoritesPage = () => {
-  return <div>FavoritesPage</div>;
+  return (
+    <div>
+      <FavoritesList />
+    </div>
+  );
 };
 
 export default FavoritesPage;
