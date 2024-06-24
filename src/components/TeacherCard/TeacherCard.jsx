@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Avatar,
   Container,
@@ -11,9 +11,18 @@ import {
   MoreLink,
 } from './TeacherCard.styled';
 import { FaStar } from 'react-icons/fa';
-import { FaRegHeart } from 'react-icons/fa6';
+import { FaHeart, FaRegHeart } from 'react-icons/fa6';
 import Reviews from '../Reviews/Reviews';
 import Popup from '../Popup/Popup';
+import { getAuth } from 'firebase/auth';
+import { firestore } from '../../firebase';
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  getDoc,
+  updateDoc,
+} from 'firebase/firestore';
 
 const TeacherCard = ({ teacher }) => {
   const languagesList = teacher.languages.reduce((acc, langue, index) => {
@@ -26,6 +35,10 @@ const TeacherCard = ({ teacher }) => {
 
   const [showAddInfo, setShowAddInfo] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -37,6 +50,55 @@ const TeacherCard = ({ teacher }) => {
 
   const handleShowAddInfo = () => {
     setShowAddInfo(!showAddInfo);
+  };
+
+  useEffect(() => {
+    const checkFavoriteStatus = async () => {
+      if (user) {
+        const userRef = doc(firestore, 'users', user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+          const userData = userSnap.data();
+          setIsFavorite(
+            userData.favorites.some((fav) => fav.id === teacher.id)
+          );
+        }
+      }
+    };
+
+    checkFavoriteStatus();
+  }, [user, teacher.id]);
+
+  const toggleFavorite = async () => {
+    if (!user) return;
+
+    const userRef = doc(firestore, 'users', user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (userSnap.exists()) {
+      const userData = userSnap.data();
+      const favorites = userData.favorites || [];
+
+      const favoriteTeacherIndex = favorites.findIndex(
+        (fav) => fav.id === teacher.id
+      );
+
+      if (favoriteTeacherIndex !== -1) {
+        const updatedFavorites = favorites.filter(
+          (fav) => fav.id !== teacher.id
+        );
+        await updateDoc(userRef, {
+          favorites: updatedFavorites,
+        });
+        setIsFavorite(false);
+      } else {
+        await updateDoc(userRef, {
+          favorites: arrayUnion(teacher),
+        });
+        setIsFavorite(true);
+      }
+    }
   };
 
   return (
@@ -63,7 +125,11 @@ const TeacherCard = ({ teacher }) => {
               </p>
             </li>
           </ul>
-          <FaRegHeart size={22} />
+          {isFavorite ? (
+            <FaHeart size={22} onClick={toggleFavorite} />
+          ) : (
+            <FaRegHeart size={22} onClick={toggleFavorite} />
+          )}
         </TopLine>
         <h3>
           {teacher.name} {teacher.surname}
