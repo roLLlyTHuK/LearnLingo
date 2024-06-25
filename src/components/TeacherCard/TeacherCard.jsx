@@ -16,7 +16,7 @@ import Popup from '../Popup/Popup';
 
 import FavButton from '../FavButton/FavButton';
 
-const TeacherCard = ({ teacher }) => {
+const TeacherCard = ({ teacher, selectedLevel }) => {
   const languagesList = teacher.languages.reduce((acc, langue, index) => {
     if (index < teacher.languages.length - 1) {
       return [...acc, <span key={index}>{langue}</span>, ', '];
@@ -90,7 +90,15 @@ const TeacherCard = ({ teacher }) => {
         )}
         <LevelsList>
           {teacher.levels.map((level, index) => (
-            <li key={index}>#{level}</li>
+            <li
+              key={index}
+              style={{
+                backgroundColor:
+                  selectedLevel === level ? 'var(--btn-color)' : '#fff',
+              }}
+            >
+              #{level}
+            </li>
           ))}
         </LevelsList>
         {showAddInfo && (
