@@ -98,7 +98,6 @@ export const LevelsList = styled.ul`
     padding: 8px 12px;
     margin: 0;
     border-radius: 35px;
-    border: 1px solid rgba(18, 20, 23, 0.2);
   }
 `;
 
@@ -108,6 +107,7 @@ export const AddInfo = styled.div`
   justify-content: start;
   align-items: start;
   gap: 4px;
+  margin: 16px 0;
 `;
 
 export const PopupBtn = styled.button`

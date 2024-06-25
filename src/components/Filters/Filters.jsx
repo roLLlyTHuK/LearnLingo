@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FilterItem, FiltersContainer } from './Filters.styled';
 
 const Filters = ({ teachers, onFilterChange }) => {
   const [languages, setLanguages] = useState([]);
@@ -52,34 +53,41 @@ const Filters = ({ teachers, onFilterChange }) => {
   };
 
   return (
-    <div>
-      <select onChange={handleLanguageChange} value={selectedLanguage}>
-        <option value="">Select Language</option>
-        {languages.map((language, index) => (
-          <option key={index} value={language}>
-            {language}
-          </option>
-        ))}
-      </select>
-
-      <select onChange={handleLevelChange} value={selectedLevel}>
-        <option value="">Select Level</option>
-        {levels.map((level, index) => (
-          <option key={index} value={level}>
-            {level}
-          </option>
-        ))}
-      </select>
-
-      <select onChange={handlePriceChange} value={selectedPrice}>
-        <option value="">Select Price</option>
-        {prices.map((price, index) => (
-          <option key={index} value={price}>
-            {price}
-          </option>
-        ))}
-      </select>
-    </div>
+    <FiltersContainer>
+      <FilterItem>
+        <label>Languages</label>
+        <select onChange={handleLanguageChange} value={selectedLanguage}>
+          <option value="">All</option>
+          {languages.map((language, index) => (
+            <option key={index} value={language}>
+              {language}
+            </option>
+          ))}
+        </select>
+      </FilterItem>
+      <FilterItem>
+        <label>Level of knowledge</label>
+        <select onChange={handleLevelChange} value={selectedLevel}>
+          <option value="">All</option>
+          {levels.map((level, index) => (
+            <option key={index} value={level}>
+              {level}
+            </option>
+          ))}
+        </select>
+      </FilterItem>
+      <FilterItem>
+        <label>Price</label>
+        <select onChange={handlePriceChange} value={selectedPrice}>
+          <option value="">All</option>
+          {prices.map((price, index) => (
+            <option key={index} value={price}>
+              {price}
+            </option>
+          ))}
+        </select>
+      </FilterItem>
+    </FiltersContainer>
   );
 };
 

@@ -81,7 +81,7 @@ export const HeroImageBox = styled.div`
 
   @keyframes greeting {
     0% {
-      transform: translatey(50%);
+      transform: translateY(50%);
     }
     100% {
       transform: translateX(0);

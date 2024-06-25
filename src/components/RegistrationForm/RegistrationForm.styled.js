@@ -151,3 +151,19 @@ export const Button = styled.button`
     background-color: var(--btn-hover-color);
   }
 `;
+
+export const ShowBtn = styled.button`
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--btn-color);
+  }
+`;

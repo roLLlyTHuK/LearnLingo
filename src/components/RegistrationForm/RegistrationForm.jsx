@@ -12,14 +12,18 @@ import {
   Form,
   HeaderBox,
   RegistrationFormContainer,
+  ShowBtn,
 } from './RegistrationForm.styled';
 import { useAuth } from '../../context/AuthContext';
 import { firestore } from '../../firebase';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
+import { useState } from 'react';
 
 const RegistrationForm = ({ isModalOpen, closeModal }) => {
   const { signup } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
   const schema = yup.object().shape({
     name: yup
@@ -67,6 +71,10 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
   if (!isModalOpen) return null;
 
   return (
@@ -112,7 +120,7 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
               </Field>
               <Field>
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   {...register('password')}
                   className={errors.password ? 'error' : ''}
                   placeholder=" "
@@ -120,8 +128,15 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
                 <label className={errors.password ? 'error' : ''}>
                   Password
                 </label>
-                {errors.phone && (
-                  <ErrorMessage>{errors.phone.message}</ErrorMessage>
+                <ShowBtn type="button" onClick={togglePasswordVisibility}>
+                  {showPassword ? (
+                    <FaRegEye size={20} />
+                  ) : (
+                    <FaRegEyeSlash size={20} />
+                  )}
+                </ShowBtn>
+                {errors.password && (
+                  <ErrorMessage>{errors.password.message}</ErrorMessage>
                 )}
               </Field>
 

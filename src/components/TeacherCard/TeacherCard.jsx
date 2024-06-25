@@ -95,6 +95,10 @@ const TeacherCard = ({ teacher, selectedLevel }) => {
               style={{
                 backgroundColor:
                   selectedLevel === level ? 'var(--btn-color)' : '#fff',
+                border:
+                  selectedLevel === level
+                    ? 'none'
+                    : '1px solid rgba(12, 14, 17, 0.2)',
               }}
             >
               #{level}

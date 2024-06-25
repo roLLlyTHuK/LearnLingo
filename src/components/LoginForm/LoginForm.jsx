@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Modal from '../Modal/Modal';
-
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 import { IoClose } from 'react-icons/io5';
 import {
   Button,
@@ -12,11 +12,14 @@ import {
   Form,
   HeaderBox,
   LoginFormContainer,
+  ShowBtn,
 } from './LoginForm.styled';
 import { useAuth } from '../../context/AuthContext';
+import { useState } from 'react';
 
 const LoginForm = ({ isModalOpen, closeModal }) => {
   const { login } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
   const schema = yup.object().shape({
     email: yup
@@ -50,6 +53,10 @@ const LoginForm = ({ isModalOpen, closeModal }) => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
   if (!isModalOpen) return null;
 
   return (
@@ -80,10 +87,10 @@ const LoginForm = ({ isModalOpen, closeModal }) => {
                 {errors.email && (
                   <ErrorMessage>{errors.email.message}</ErrorMessage>
                 )}
-              </Field>
+              </Field>{' '}
               <Field>
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   {...register('password')}
                   className={errors.password ? 'error' : ''}
                   placeholder=" "
@@ -91,11 +98,17 @@ const LoginForm = ({ isModalOpen, closeModal }) => {
                 <label className={errors.password ? 'error' : ''}>
                   Password
                 </label>
-                {errors.phone && (
-                  <ErrorMessage>{errors.phone.message}</ErrorMessage>
+                <ShowBtn type="button" onClick={togglePasswordVisibility}>
+                  {showPassword ? (
+                    <FaRegEye size={20} />
+                  ) : (
+                    <FaRegEyeSlash size={20} />
+                  )}
+                </ShowBtn>
+                {errors.password && (
+                  <ErrorMessage>{errors.password.message}</ErrorMessage>
                 )}
               </Field>
-
               <Button type="submit">Log In</Button>
             </Form>
           </LoginFormContainer>

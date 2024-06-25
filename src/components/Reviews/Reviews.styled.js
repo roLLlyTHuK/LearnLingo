@@ -54,7 +54,7 @@ export const Rating = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  align-items: center;
   gap: 8px;
   padding: 0;
   font-family: 'Roboto-Medium', sans-serif;
