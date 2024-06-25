@@ -130,3 +130,9 @@ export const PopupBtn = styled.button`
     background-color: var(--btn-hover-color);
   }
 `;
+
+export const HeartBtn = styled.button`
+  border: none;
+  padding: 0;
+  margin: 0;
+`;

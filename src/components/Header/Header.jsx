@@ -1,4 +1,4 @@
-import { redirect, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   HeaderContainer,
   LoginBox,
@@ -20,6 +20,7 @@ export const Header = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isSignUpFormOpen, setIsSignUpFormOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { currentUser, logout } = useAuth();
 
   const openLoginForm = () => {
@@ -40,6 +41,7 @@ export const Header = () => {
 
   const handleLogout = () => {
     logout();
+    navigate('/home');
   };
   const isActive = (path) => location.pathname === path;
 
@@ -84,11 +86,16 @@ export const Header = () => {
       </Navigation>
       <UserBox>
         {currentUser ? (
-          <LoginBox onClick={handleLogout}>
-            {currentUser.displayName}
-            Log Out
-            <FiLogOut size={20} color={'#f4c550'} />
-          </LoginBox>
+          <>
+            <span>
+              {currentUser.displayName
+                ? currentUser.displayName
+                : currentUser.email}
+            </span>
+            <LoginBox onClick={handleLogout}>
+              <FiLogOut size={20} color={'#f4c550'} />
+            </LoginBox>
+          </>
         ) : (
           <>
             <LoginBox onClick={openLoginForm}>

@@ -4,7 +4,6 @@ import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 import HomePage from './pages/HomePage/HomePage';
 import TeachersPage from './pages/TeachersPage/TeachersPage';
-import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 
@@ -14,10 +13,10 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
-          <Route element={<PublicRoute />}>
-            <Route path="home" element={<HomePage />} />
-            <Route path="teachers" element={<TeachersPage />} />
-          </Route>
+
+          <Route path="home" element={<HomePage />} />
+          <Route path="teachers" element={<TeachersPage />} />
+
           <Route element={<PrivateRoute />}>
             <Route path="favorites" element={<FavoritesPage />} />
           </Route>
