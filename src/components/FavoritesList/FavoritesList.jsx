@@ -17,7 +17,6 @@ const FavoritesList = () => {
       if (user) {
         const ref = doc(firestore, 'users', user.uid);
 
-        // Listen for real-time updates to the user's favorites
         unsubscribe = onSnapshot(
           ref,
           (snap) => {
@@ -51,11 +50,11 @@ const FavoritesList = () => {
   }, [auth]);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <div>Somethng went wrong: {error}</div>;
 
   return (
     <div>
-      <h2>Favorites List [{favorites.length}]</h2>
+      <h2>Favorites teachers [{favorites.length}]:</h2>
       <ul>
         {favorites.map((fav, index) => (
           <li key={index}>
