@@ -14,12 +14,13 @@ import {
   RegistrationFormContainer,
   ShowBtn,
 } from './RegistrationForm.styled';
-import { useAuth } from '../../context/AuthContext';
+// import { useAuth } from '../../context/AuthContext';
 import { firestore } from '../../firebase';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 import { useState } from 'react';
+import { useAuth } from '../../context/useAuth';
 
 const RegistrationForm = ({ isModalOpen, closeModal }) => {
   const { signup } = useAuth();

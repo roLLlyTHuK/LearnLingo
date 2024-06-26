@@ -14,8 +14,9 @@ import {
   LoginFormContainer,
   ShowBtn,
 } from './LoginForm.styled';
-import { useAuth } from '../../context/AuthContext';
+// import { useAuth } from '../../context/AuthContext';
 import { useState } from 'react';
+import { useAuth } from '../../context/useAuth';
 
 const LoginForm = ({ isModalOpen, closeModal }) => {
   const { login } = useAuth();

@@ -14,7 +14,8 @@ import { FiLogOut } from 'react-icons/fi';
 import { useState } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../context/useAuth';
+// import { useAuth } from '../../context/AuthContext';
 
 export const Header = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
