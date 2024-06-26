@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { firestore } from '../../firebase';
 import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { FaHeart, FaRegHeart, FaTrash } from 'react-icons/fa6';
@@ -8,9 +8,15 @@ import { useLocation } from 'react-router-dom';
 
 const FavButton = ({ teacher }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [user, setUser] = useState(null);
   const auth = getAuth();
-  const user = auth.currentUser;
   const location = useLocation();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, [auth]);
 
   useEffect(() => {
     const checkFavoriteStatus = async () => {
@@ -27,11 +33,16 @@ const FavButton = ({ teacher }) => {
       }
     };
 
-    checkFavoriteStatus();
+    if (user) {
+      checkFavoriteStatus();
+    }
   }, [user, teacher.id]);
 
   const toggleFavorite = async () => {
-    if (!user) return;
+    if (!user) {
+      alert('Please log in to favorite this teacher!');
+      return;
+    }
 
     const userRef = doc(firestore, 'users', user.uid);
     const userSnap = await getDoc(userRef);

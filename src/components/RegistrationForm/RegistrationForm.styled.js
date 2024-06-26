@@ -98,6 +98,7 @@ export const Field = styled.div`
     line-height: 22px;
     width: 100%;
     padding: 16px 18px;
+    background-color: #fff;
     margin: 0;
     outline: none;
 
@@ -105,7 +106,7 @@ export const Field = styled.div`
     &:not(:placeholder-shown) + label {
       top: 0;
       color: var(--btn-color);
-      background-color: #eee;
+      background-color: #fff;
     }
 
     &:focus {

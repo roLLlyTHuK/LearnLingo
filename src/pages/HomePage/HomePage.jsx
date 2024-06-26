@@ -2,6 +2,7 @@ import FaceImg from '../../assets/face_x1.png';
 import MacImg from '../../assets/iMac.png';
 import {
   BtnLink,
+  Container,
   HeroContent,
   HeroImageBox,
   List,
@@ -17,7 +18,7 @@ const HomePage = () => {
     { value: 200, text: 'Tutor nationalities' },
   ];
   return (
-    <>
+    <Container>
       <TopWrapper>
         <HeroContent>
           <h1>
@@ -51,7 +52,7 @@ const HomePage = () => {
           </li>
         ))}
       </List>
-    </>
+    </Container>
   );
 };
 

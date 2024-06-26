@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const TopWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -28,10 +35,32 @@ export const HeroContent = styled.div`
     color: var(--primary-text-color);
 
     span {
-      background-color: var(--bg-secondary-color);
+      position: relative;
       font-family: 'Roboto-Regular', sans-serif;
       font-weight: 400;
       font-style: italic;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: var(--bg-secondary-color);
+        z-index: -1;
+        animation: backgroundFill 2s ease-in-out forwards;
+      }
+    }
+
+    @keyframes backgroundFill {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
     }
   }
 

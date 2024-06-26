@@ -7,6 +7,7 @@ export const FiltersContainer = styled.div`
   justify-content: start;
   align-items: center;
   gap: 20px;
+  margin-bottom: 32px;
 `;
 
 export const FilterItem = styled.div`
@@ -33,9 +34,13 @@ export const FilterItem = styled.div`
     line-height: 20px;
     text-align: left;
     color: var(--primary-text-color);
+    background-color: #fff;
   }
 
   select:focus {
     outline: none;
+  }
+  option {
+    padding: 8px;
   }
 `;

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import TeacherCard from '../TeacherCard/TeacherCard';
 import Filters from '../Filters/Filters';
-import { LoadMoreBtn } from './TeachersList.styled';
+import { Container, LoadMoreBtn } from './TeachersList.styled';
 import { db } from '../../firebase';
 import { onValue, ref } from 'firebase/database';
 
@@ -53,7 +53,7 @@ const TeacherList = () => {
   };
 
   return (
-    <>
+    <Container>
       <Filters teachers={teachers} onFilterChange={handleFilterChange} />
       {filteredTeachers.slice(0, visibleCount).map((teacher, index) => (
         <TeacherCard
@@ -65,7 +65,7 @@ const TeacherList = () => {
       {visibleCount < filteredTeachers.length && (
         <LoadMoreBtn onClick={handleLoadMore}>Load More</LoadMoreBtn>
       )}
-    </>
+    </Container>
   );
 };
 

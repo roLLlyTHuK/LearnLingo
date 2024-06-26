@@ -2,13 +2,16 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 1184px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: start;
   gap: 48px;
   padding: 24px;
-  width: 1184px;
+  background-color: #fff;
+  border-radius: 24px;
+  margin-bottom: 32px;
 `;
 
 export const Avatar = styled.img`
@@ -79,10 +82,12 @@ export const SubTitle = styled.p`
 `;
 
 export const MoreLink = styled(Link)`
+  all: unset;
   text-decoration: underline;
   font-style: 16px;
   line-height: 24px;
   margin: 8px 0 24px 0;
+  cursor: pointer;
 `;
 
 export const LevelsList = styled.ul`

@@ -136,7 +136,7 @@ const Popup = ({ isModalOpen, closeModal, teacher }) => {
                 </Field>
                 <Field>
                   <input
-                    type="number"
+                    type="tel"
                     {...register('phone')}
                     className={errors.phone ? 'error' : ''}
                     placeholder=" "

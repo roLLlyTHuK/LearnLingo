@@ -46,7 +46,7 @@ export const NavigationLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    background-color: var(--btn-color);
+    color: var(--btn-color);
     font-weight: 700;
   }
 
@@ -71,6 +71,8 @@ export const LoginBox = styled.button`
   align-items: center;
   gap: 8px;
   border: none;
+  background-color: transparent;
+  cursor: pointer;
 
   &:hover,
   &:focus {
