@@ -5755,4 +5755,4 @@ img {
 button {
   cursor: pointer;
 }
-`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/learn-lingo",children:N.jsxs(a7,{children:[N.jsx(MW,{}),N.jsx(NW,{})]})})}));
+`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/learn-lingo/",children:N.jsxs(a7,{children:[N.jsx(MW,{}),N.jsx(NW,{})]})})}));
