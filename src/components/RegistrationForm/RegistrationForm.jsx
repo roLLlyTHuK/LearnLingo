@@ -14,17 +14,18 @@ import {
   RegistrationFormContainer,
   ShowBtn,
 } from './RegistrationForm.styled';
-// import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { firestore } from '../../firebase';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 import { useState } from 'react';
-import { useAuth } from '../../context/useAuth';
+import useNotification from '../../hooks/useNotification';
 
 const RegistrationForm = ({ isModalOpen, closeModal }) => {
   const { signup } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const notify = useNotification();
 
   const schema = yup.object().shape({
     name: yup
@@ -66,9 +67,10 @@ const RegistrationForm = ({ isModalOpen, closeModal }) => {
         favorites: [],
       });
       closeModal();
-      alert('Form submitted successfully!');
+      notify('Registration successful! Welcome to our platform!', 'success');
     } catch (error) {
       console.error('Error signing up:', error);
+      notify(`Sorry, something went wrong. ${error.message}`, 'error');
     }
   };
 

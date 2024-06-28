@@ -14,13 +14,14 @@ import {
   LoginFormContainer,
   ShowBtn,
 } from './LoginForm.styled';
-// import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { useState } from 'react';
-import { useAuth } from '../../context/useAuth';
+import useNotification from '../../hooks/useNotification';
 
 const LoginForm = ({ isModalOpen, closeModal }) => {
   const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const notify = useNotification();
 
   const schema = yup.object().shape({
     email: yup
@@ -49,8 +50,10 @@ const LoginForm = ({ isModalOpen, closeModal }) => {
     try {
       await login(email, password);
       closeModal();
+      notify('Welcome back', 'success');
     } catch (error) {
       console.error('Error logging in:', error);
+      notify(`Something went wrong: ${error.message}`, 'error');
     }
   };
 

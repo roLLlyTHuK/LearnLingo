@@ -13,9 +13,8 @@ import { FiLogIn } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';
 import { useState } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
+import { useAuth } from '../../context/AuthContext';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
-import { useAuth } from '../../context/useAuth';
-// import { useAuth } from '../../context/AuthContext';
 
 export const Header = () => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -42,21 +41,18 @@ export const Header = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/home');
+    navigate('/');
   };
   const isActive = (path) => location.pathname === path;
 
   return (
     <HeaderContainer>
-      <LogoLink to="/home">
+      <LogoLink to="/">
         <img src={Logo} alt="Logo" width={28} height={28} />
         <span>LearnLingo</span>
       </LogoLink>
       <Navigation>
-        <NavigationLink
-          to="/home"
-          className={isActive('/home') ? 'active' : ''}
-        >
+        <NavigationLink to="/" className={isActive('/') ? 'active' : ''}>
           Home
         </NavigationLink>
         <NavigationLink

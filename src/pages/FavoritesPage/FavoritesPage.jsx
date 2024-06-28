@@ -1,10 +1,12 @@
 import FavoritesList from '../../components/FavoritesList/FavoritesList';
+import ScrollToTopButton from '../../components/ScrollToTop/ScrollToTopButton';
 
 const FavoritesPage = () => {
   return (
-    <div>
+    <>
       <FavoritesList />
-    </div>
+      <ScrollToTopButton />
+    </>
   );
 };
 

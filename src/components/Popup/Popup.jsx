@@ -14,11 +14,10 @@ import {
   Radio,
   Teacher,
 } from './Popup.styled';
-
 import { IoClose } from 'react-icons/io5';
+import useNotification from '../../hooks/useNotification';
 
 const Popup = ({ isModalOpen, closeModal, teacher }) => {
-  // Схема валидации для Yup
   const schema = yup.object().shape({
     name: yup.string().required('Name is required'),
     email: yup
@@ -43,10 +42,14 @@ const Popup = ({ isModalOpen, closeModal, teacher }) => {
     mode: 'onChange',
   });
 
+  const notify = useNotification();
   const onSubmit = (data) => {
     console.log(data);
     closeModal();
-    alert('Form submitted successfully!');
+    notify(
+      'Thank you for your interest in learning English with us!',
+      'success'
+    );
   };
 
   if (!isModalOpen) return null;

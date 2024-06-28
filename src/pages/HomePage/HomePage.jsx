@@ -31,7 +31,7 @@ const HomePage = () => {
           </p>
           <BtnLink to="/teachers">Get started</BtnLink>
         </HeroContent>
-        <HeroImageBox>
+        <HeroImageBox id="hero">
           <img src={FaceImg} width={339} height={339} alt="" />
           <img src={MacImg} width={360} height={247} alt="" />
         </HeroImageBox>

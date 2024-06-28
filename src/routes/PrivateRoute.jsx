@@ -5,7 +5,7 @@ const PrivateRoute = () => {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  return user ? <Outlet /> : <Navigate to="/home" replace />;
+  return user ? <Outlet /> : <Navigate to="/" replace />;
 };
 
 export default PrivateRoute;

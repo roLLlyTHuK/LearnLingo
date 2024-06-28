@@ -5,6 +5,7 @@ import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { FaHeart, FaRegHeart, FaTrash } from 'react-icons/fa6';
 import { HeartBtn } from './FavButton.styled';
 import { useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const FavButton = ({ teacher }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -40,7 +41,12 @@ const FavButton = ({ teacher }) => {
 
   const toggleFavorite = async () => {
     if (!user) {
-      alert('Please log in to favorite this teacher!');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must be logged in to add favorites',
+        confirmButtonColor: 'var(--btn-color)',
+      });
       return;
     }
 

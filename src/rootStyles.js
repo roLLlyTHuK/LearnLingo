@@ -1,3 +1,10 @@
+import { createGlobalStyle } from 'styled-components';
+
+import RobotoBold from './fonts/Roboto-Bold.ttf';
+import RobotoMedium from './fonts/Roboto-Medium.ttf';
+import RobotoRegular from './fonts/Roboto-Regular.ttf';
+
+const GlobalStyles = createGlobalStyle`
 :root {
   --primary-text-color: #121417;
   --secondary-text-color: #757575;
@@ -25,19 +32,19 @@
   font-family: 'Roboto-Bold';
   font-weight: 700;
   font-style: normal;
-  src: url(./fonts/Roboto-Bold.ttf) format('truetype');
+  src: url(${RobotoBold}) format('truetype');
 }
 @font-face {
   font-family: 'Roboto-Medium';
   font-weight: 600;
   font-style: normal;
-  src: url(./fonts/Roboto-Medium.ttf) format('truetype');
+  src: url(${RobotoMedium}) format('truetype');
 }
 @font-face {
   font-family: 'Roboto-Regular';
   font-weight: 400;
   font-style: normal;
-  src: url(./fonts/Roboto-Regular.ttf) format('truetype');
+  src: url(${RobotoRegular}) format('truetype');
 }
 
 body {
@@ -76,3 +83,6 @@ img {
 button {
   cursor: pointer;
 }
+`;
+
+export default GlobalStyles;
