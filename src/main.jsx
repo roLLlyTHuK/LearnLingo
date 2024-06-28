@@ -8,7 +8,7 @@ import './firebase.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/learn-lingo">
+    <BrowserRouter basename="/learn-lingo/">
       <AuthProvider>
         <GlobalStyles />
         <App />
