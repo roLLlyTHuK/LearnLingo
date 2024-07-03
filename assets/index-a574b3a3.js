@@ -5011,7 +5011,7 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
   padding: 0 64px;
   width: 1440px;
   margin: 0 auto;
-`,_7=({children:t})=>N.jsx(v7,{children:t}),w7=()=>N.jsx("div",{children:"Loader...Please wait..."}),E7=()=>N.jsxs(_7,{children:[N.jsx(y7,{}),N.jsx(G.Suspense,{fallback:N.jsx(w7,{}),children:N.jsx(oC,{})})]}),T7="/learn-lingo/assets/face_x1-b65e11cd.png",I7="/learn-lingo/assets/iMac-8b3b4ee4.png",S7=ue.section`
+`,_7=({children:t})=>N.jsx(v7,{children:t}),w7=()=>N.jsx("div",{children:"Loader...Please wait..."}),E7=()=>N.jsxs(_7,{children:[N.jsx(y7,{}),N.jsx(G.Suspense,{fallback:N.jsx(w7,{}),children:N.jsx(oC,{})})]}),T7=""+new URL("face_x1-b65e11cd.png",import.meta.url).href,I7=""+new URL("iMac-8b3b4ee4.png",import.meta.url).href,S7=ue.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5676,7 +5676,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     0 0 20px #00baff,
     0 0 40px #00baff,
     0 0 80px #00baff;
-`,NW=()=>N.jsx(RW,{children:N.jsx(PW,{children:"404"})});function OW(){return N.jsx(AM,{children:N.jsx(wO,{children:N.jsxs(ko,{path:"/",element:N.jsx(E7,{}),children:[N.jsx(ko,{index:!0,element:N.jsx(Y7,{})}),N.jsx(ko,{path:"teachers",element:N.jsx(bW,{})}),N.jsx(ko,{element:N.jsx(xW,{}),children:N.jsx(ko,{path:"favorites",element:N.jsx(AW,{})})}),N.jsx(ko,{path:"*",element:N.jsx(NW,{})})]})})})}const DW="/learn-lingo/assets/Roboto-Bold-ec685a46.ttf",LW="/learn-lingo/assets/Roboto-Medium-9d0d55a3.ttf",MW="/learn-lingo/assets/Roboto-Regular-4e147ab6.ttf",FW=RF`
+`,NW=()=>N.jsx(RW,{children:N.jsx(PW,{children:"404"})});function OW(){return N.jsx(AM,{children:N.jsx(wO,{children:N.jsxs(ko,{path:"/",element:N.jsx(E7,{}),children:[N.jsx(ko,{index:!0,element:N.jsx(Y7,{})}),N.jsx(ko,{path:"teachers",element:N.jsx(bW,{})}),N.jsx(ko,{element:N.jsx(xW,{}),children:N.jsx(ko,{path:"favorites",element:N.jsx(AW,{})})}),N.jsx(ko,{path:"*",element:N.jsx(NW,{})})]})})})}const DW=""+new URL("Roboto-Bold-ec685a46.ttf",import.meta.url).href,LW=""+new URL("Roboto-Medium-9d0d55a3.ttf",import.meta.url).href,MW=""+new URL("Roboto-Regular-4e147ab6.ttf",import.meta.url).href,FW=RF`
 :root {
   --primary-text-color: #121417;
   --secondary-text-color: #757575;
@@ -5755,4 +5755,4 @@ img {
 button {
   cursor: pointer;
 }
-`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/learn-lingo/",children:N.jsxs(a7,{children:[N.jsx(FW,{}),N.jsx(OW,{})]})})}));
+`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/",children:N.jsxs(a7,{children:[N.jsx(FW,{}),N.jsx(OW,{})]})})}));
