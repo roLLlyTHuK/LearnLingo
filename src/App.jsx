@@ -2,10 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { AppWrapper } from './App.styled';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './routes/PrivateRoute';
-// import HomePage from './pages/HomePage/HomePage';
-// import TeachersPage from './pages/TeachersPage/TeachersPage';
-// import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-// import ErrorPage from './pages/ErrorPage/ErrorPage';
 import { lazy } from 'react';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
