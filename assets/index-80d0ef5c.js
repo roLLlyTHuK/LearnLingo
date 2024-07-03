@@ -5011,18 +5011,18 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
   padding: 0 64px;
   width: 1440px;
   margin: 0 auto;
-`,_7=({children:t})=>N.jsx(v7,{children:t}),w7=()=>N.jsxs(_7,{children:[N.jsx(y7,{}),N.jsx(G.Suspense,{fallback:N.jsx("div",{children:"Loading..."}),children:N.jsx(oC,{})})]}),E7="/learn-lingo/assets/face_x1-b65e11cd.png",T7="/learn-lingo/assets/iMac-8b3b4ee4.png",I7=ue.section`
+`,_7=({children:t})=>N.jsx(v7,{children:t}),w7=()=>N.jsx("div",{children:"Loader...Please wait..."}),E7=()=>N.jsxs(_7,{children:[N.jsx(y7,{}),N.jsx(G.Suspense,{fallback:N.jsx(w7,{}),children:N.jsx(oC,{})})]}),T7="/learn-lingo/assets/face_x1-b65e11cd.png",I7="/learn-lingo/assets/iMac-8b3b4ee4.png",S7=ue.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-`,S7=ue.div`
+`,C7=ue.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 40px 0;
-`,C7=ue.div`
+`,b7=ue.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -5073,7 +5073,7 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
   p {
     width: 471px;
   }
-`,b7=ue(qp)`
+`,x7=ue(qp)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5091,7 +5091,7 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
   &:focus {
     background-color: var(--btn-hover-color);
   }
-`,x7=ue.div`
+`,k7=ue.div`
   display: block;
   position: relative;
   background-color: var(--bg-secondary-color);
@@ -5123,7 +5123,7 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
     top: 354px;
     left: 103.64px;
   }
-`,k7=ue.ul`
+`,A7=ue.ul`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -5166,8 +5166,8 @@ https://sweetalert2.github.io/#ajax-request`),XP(_),typeof _.title=="string"&&(_
     padding: 0;
     margin: 0;
   }
-`;var fE={},Bp=function(){return Bp=Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var i in e=arguments[n])Object.prototype.hasOwnProperty.call(e,i)&&(t[i]=e[i]);return t},Bp.apply(this,arguments)},A7=function(){function t(e,n,r){var i=this;this.endVal=n,this.options=r,this.version="2.8.0",this.defaults={startVal:0,decimalPlaces:0,duration:2,useEasing:!0,useGrouping:!0,useIndianSeparators:!1,smartEasingThreshold:999,smartEasingAmount:333,separator:",",decimal:".",prefix:"",suffix:"",enableScrollSpy:!1,scrollSpyDelay:200,scrollSpyOnce:!1},this.finalEndVal=null,this.useEasing=!0,this.countDown=!1,this.error="",this.startVal=0,this.paused=!0,this.once=!1,this.count=function(s){i.startTime||(i.startTime=s);var o=s-i.startTime;i.remaining=i.duration-o,i.useEasing?i.countDown?i.frameVal=i.startVal-i.easingFn(o,0,i.startVal-i.endVal,i.duration):i.frameVal=i.easingFn(o,i.startVal,i.endVal-i.startVal,i.duration):i.frameVal=i.startVal+(i.endVal-i.startVal)*(o/i.duration);var a=i.countDown?i.frameVal<i.endVal:i.frameVal>i.endVal;i.frameVal=a?i.endVal:i.frameVal,i.frameVal=Number(i.frameVal.toFixed(i.options.decimalPlaces)),i.printValue(i.frameVal),o<i.duration?i.rAF=requestAnimationFrame(i.count):i.finalEndVal!==null?i.update(i.finalEndVal):i.options.onCompleteCallback&&i.options.onCompleteCallback()},this.formatNumber=function(s){var o,a,l,c,d=s<0?"-":"";o=Math.abs(s).toFixed(i.options.decimalPlaces);var f=(o+="").split(".");if(a=f[0],l=f.length>1?i.options.decimal+f[1]:"",i.options.useGrouping){c="";for(var g=3,E=0,I=0,x=a.length;I<x;++I)i.options.useIndianSeparators&&I===4&&(g=2,E=1),I!==0&&E%g==0&&(c=i.options.separator+c),E++,c=a[x-I-1]+c;a=c}return i.options.numerals&&i.options.numerals.length&&(a=a.replace(/[0-9]/g,function(D){return i.options.numerals[+D]}),l=l.replace(/[0-9]/g,function(D){return i.options.numerals[+D]})),d+i.options.prefix+a+l+i.options.suffix},this.easeOutExpo=function(s,o,a,l){return a*(1-Math.pow(2,-10*s/l))*1024/1023+o},this.options=Bp(Bp({},this.defaults),r),this.formattingFn=this.options.formattingFn?this.options.formattingFn:this.formatNumber,this.easingFn=this.options.easingFn?this.options.easingFn:this.easeOutExpo,this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.endVal=this.validateValue(n),this.options.decimalPlaces=Math.max(this.options.decimalPlaces),this.resetDuration(),this.options.separator=String(this.options.separator),this.useEasing=this.options.useEasing,this.options.separator===""&&(this.options.useGrouping=!1),this.el=typeof e=="string"?document.getElementById(e):e,this.el?this.printValue(this.startVal):this.error="[CountUp] target is null or undefined",typeof window<"u"&&this.options.enableScrollSpy&&(this.error?console.error(this.error,e):(window.onScrollFns=window.onScrollFns||[],window.onScrollFns.push(function(){return i.handleScroll(i)}),window.onscroll=function(){window.onScrollFns.forEach(function(s){return s()})},this.handleScroll(this)))}return t.prototype.handleScroll=function(e){if(e&&window&&!e.once){var n=window.innerHeight+window.scrollY,r=e.el.getBoundingClientRect(),i=r.top+window.pageYOffset,s=r.top+r.height+window.pageYOffset;s<n&&s>window.scrollY&&e.paused?(e.paused=!1,setTimeout(function(){return e.start()},e.options.scrollSpyDelay),e.options.scrollSpyOnce&&(e.once=!0)):(window.scrollY>s||i>n)&&!e.paused&&e.reset()}},t.prototype.determineDirectionAndSmartEasing=function(){var e=this.finalEndVal?this.finalEndVal:this.endVal;this.countDown=this.startVal>e;var n=e-this.startVal;if(Math.abs(n)>this.options.smartEasingThreshold&&this.options.useEasing){this.finalEndVal=e;var r=this.countDown?1:-1;this.endVal=e+r*this.options.smartEasingAmount,this.duration=this.duration/2}else this.endVal=e,this.finalEndVal=null;this.finalEndVal!==null?this.useEasing=!1:this.useEasing=this.options.useEasing},t.prototype.start=function(e){this.error||(this.options.onStartCallback&&this.options.onStartCallback(),e&&(this.options.onCompleteCallback=e),this.duration>0?(this.determineDirectionAndSmartEasing(),this.paused=!1,this.rAF=requestAnimationFrame(this.count)):this.printValue(this.endVal))},t.prototype.pauseResume=function(){this.paused?(this.startTime=null,this.duration=this.remaining,this.startVal=this.frameVal,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count)):cancelAnimationFrame(this.rAF),this.paused=!this.paused},t.prototype.reset=function(){cancelAnimationFrame(this.rAF),this.paused=!0,this.resetDuration(),this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.printValue(this.startVal)},t.prototype.update=function(e){cancelAnimationFrame(this.rAF),this.startTime=null,this.endVal=this.validateValue(e),this.endVal!==this.frameVal&&(this.startVal=this.frameVal,this.finalEndVal==null&&this.resetDuration(),this.finalEndVal=null,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count))},t.prototype.printValue=function(e){var n;if(this.el){var r=this.formattingFn(e);!((n=this.options.plugin)===null||n===void 0)&&n.render?this.options.plugin.render(this.el,r):this.el.tagName==="INPUT"?this.el.value=r:this.el.tagName==="text"||this.el.tagName==="tspan"?this.el.textContent=r:this.el.innerHTML=r}},t.prototype.ensureNumber=function(e){return typeof e=="number"&&!isNaN(e)},t.prototype.validateValue=function(e){var n=Number(e);return this.ensureNumber(n)?n:(this.error="[CountUp] invalid start or end value: ".concat(e),null)},t.prototype.resetDuration=function(){this.startTime=null,this.duration=1e3*Number(this.options.duration),this.remaining=this.duration},t}();const R7=Object.freeze(Object.defineProperty({__proto__:null,CountUp:A7},Symbol.toStringTag,{value:"Module"})),P7=lN(R7);Object.defineProperty(fE,"__esModule",{value:!0});var Yt=G,N7=P7;function O7(t,e){var n=t==null?null:typeof Symbol<"u"&&t[Symbol.iterator]||t["@@iterator"];if(n!=null){var r,i,s,o,a=[],l=!0,c=!1;try{if(s=(n=n.call(t)).next,e===0){if(Object(n)!==n)return;l=!1}else for(;!(l=(r=s.call(n)).done)&&(a.push(r.value),a.length!==e);l=!0);}catch(d){c=!0,i=d}finally{try{if(!l&&n.return!=null&&(o=n.return(),Object(o)!==o))return}finally{if(c)throw i}}return a}}function jS(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter(function(i){return Object.getOwnPropertyDescriptor(t,i).enumerable})),n.push.apply(n,r)}return n}function zp(t){for(var e=1;e<arguments.length;e++){var n=arguments[e]!=null?arguments[e]:{};e%2?jS(Object(n),!0).forEach(function(r){M7(t,r,n[r])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):jS(Object(n)).forEach(function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(n,r))})}return t}function D7(t,e){if(typeof t!="object"||!t)return t;var n=t[Symbol.toPrimitive];if(n!==void 0){var r=n.call(t,e||"default");if(typeof r!="object")return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return(e==="string"?String:Number)(t)}function L7(t){var e=D7(t,"string");return typeof e=="symbol"?e:String(e)}function M7(t,e,n){return e=L7(e),e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function E_(){return E_=Object.assign?Object.assign.bind():function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t},E_.apply(this,arguments)}function F7(t,e){if(t==null)return{};var n={},r=Object.keys(t),i,s;for(s=0;s<r.length;s++)i=r[s],!(e.indexOf(i)>=0)&&(n[i]=t[i]);return n}function nP(t,e){if(t==null)return{};var n=F7(t,e),r,i;if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(t);for(i=0;i<s.length;i++)r=s[i],!(e.indexOf(r)>=0)&&Object.prototype.propertyIsEnumerable.call(t,r)&&(n[r]=t[r])}return n}function V7(t,e){return j7(t)||O7(t,e)||U7(t,e)||$7()}function j7(t){if(Array.isArray(t))return t}function U7(t,e){if(t){if(typeof t=="string")return US(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);if(n==="Object"&&t.constructor&&(n=t.constructor.name),n==="Map"||n==="Set")return Array.from(t);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return US(t,e)}}function US(t,e){(e==null||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function $7(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
-In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}var B7=typeof window<"u"&&typeof window.document<"u"&&typeof window.document.createElement<"u"?Yt.useLayoutEffect:Yt.useEffect;function Cr(t){var e=Yt.useRef(t);return B7(function(){e.current=t}),Yt.useCallback(function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return e.current.apply(void 0,r)},[])}var z7=function(e,n){var r=n.decimal,i=n.decimals,s=n.duration,o=n.easingFn,a=n.end,l=n.formattingFn,c=n.numerals,d=n.prefix,f=n.separator,g=n.start,E=n.suffix,I=n.useEasing,x=n.useGrouping,D=n.useIndianSeparators,S=n.enableScrollSpy,w=n.scrollSpyDelay,k=n.scrollSpyOnce,V=n.plugin;return new N7.CountUp(e,a,{startVal:g,duration:s,decimal:r,decimalPlaces:i,easingFn:o,formattingFn:l,numerals:c,separator:f,prefix:d,suffix:E,plugin:V,useEasing:I,useIndianSeparators:D,useGrouping:x,enableScrollSpy:S,scrollSpyDelay:w,scrollSpyOnce:k})},W7=["ref","startOnMount","enableReinitialize","delay","onEnd","onStart","onPauseResume","onReset","onUpdate"],H7={decimal:".",separator:",",delay:null,prefix:"",suffix:"",duration:2,start:0,decimals:0,startOnMount:!0,enableReinitialize:!0,useEasing:!0,useGrouping:!0,useIndianSeparators:!1},rP=function(e){var n=Object.fromEntries(Object.entries(e).filter(function(A){var P=V7(A,2),M=P[1];return M!==void 0})),r=Yt.useMemo(function(){return zp(zp({},H7),n)},[e]),i=r.ref,s=r.startOnMount,o=r.enableReinitialize,a=r.delay,l=r.onEnd,c=r.onStart,d=r.onPauseResume,f=r.onReset,g=r.onUpdate,E=nP(r,W7),I=Yt.useRef(),x=Yt.useRef(),D=Yt.useRef(!1),S=Cr(function(){return z7(typeof i=="string"?i:i.current,E)}),w=Cr(function(A){var P=I.current;if(P&&!A)return P;var M=S();return I.current=M,M}),k=Cr(function(){var A=function(){return w(!0).start(function(){l==null||l({pauseResume:V,reset:U,start:C,update:H})})};a&&a>0?x.current=setTimeout(A,a*1e3):A(),c==null||c({pauseResume:V,reset:U,update:H})}),V=Cr(function(){w().pauseResume(),d==null||d({reset:U,start:C,update:H})}),U=Cr(function(){w().el&&(x.current&&clearTimeout(x.current),w().reset(),f==null||f({pauseResume:V,start:C,update:H}))}),H=Cr(function(A){w().update(A),g==null||g({pauseResume:V,reset:U,start:C})}),C=Cr(function(){U(),k()}),b=Cr(function(A){s&&(A&&U(),k())});return Yt.useEffect(function(){D.current?o&&b(!0):(D.current=!0,b())},[o,D,b,a,e.start,e.suffix,e.prefix,e.duration,e.separator,e.decimals,e.decimal,e.formattingFn]),Yt.useEffect(function(){return function(){U()}},[U]),{start:C,pauseResume:V,reset:U,update:H,getCountUp:w}},q7=["className","redraw","containerProps","children","style"],G7=function(e){var n=e.className,r=e.redraw,i=e.containerProps,s=e.children,o=e.style,a=nP(e,q7),l=Yt.useRef(null),c=Yt.useRef(!1),d=rP(zp(zp({},a),{},{ref:l,startOnMount:typeof s!="function"||e.delay===0,enableReinitialize:!1})),f=d.start,g=d.reset,E=d.update,I=d.pauseResume,x=d.getCountUp,D=Cr(function(){f()}),S=Cr(function(V){e.preserveValue||g(),E(V)}),w=Cr(function(){if(typeof e.children=="function"&&!(l.current instanceof Element)){console.error(`Couldn't find attached element to hook the CountUp instance into! Try to attach "containerRef" from the render prop to a an Element, eg. <span ref={containerRef} />.`);return}x()});Yt.useEffect(function(){w()},[w]),Yt.useEffect(function(){c.current&&S(e.end)},[e.end,S]);var k=r&&e;return Yt.useEffect(function(){r&&c.current&&D()},[D,r,k]),Yt.useEffect(function(){!r&&c.current&&D()},[D,r,e.start,e.suffix,e.prefix,e.duration,e.separator,e.decimals,e.decimal,e.className,e.formattingFn]),Yt.useEffect(function(){c.current=!0},[]),typeof s=="function"?s({countUpRef:l,start:f,reset:g,update:E,pauseResume:I,getCountUp:x}):Yt.createElement("span",E_({className:n,ref:l,style:o},i),typeof e.start<"u"?x().formattingFn(e.start):"")},K7=fE.default=G7;fE.useCountUp=rP;const Q7=()=>{const t=[{value:32e3,text:"Experienced tutors"},{value:3e5,text:"5-star tutor reviews"},{value:120,text:"Subjects taught"},{value:200,text:"Tutor nationalities"}];return N.jsxs(I7,{children:[N.jsxs(S7,{children:[N.jsxs(C7,{children:[N.jsxs("h1",{children:["Unlock your potential with the best ",N.jsx("span",{children:"language"})," tutors"]}),N.jsx("p",{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),N.jsx(b7,{to:"/teachers",children:"Get started"})]}),N.jsxs(x7,{id:"hero",children:[N.jsx("img",{src:E7,width:339,height:339,alt:""}),N.jsx("img",{src:T7,width:360,height:247,alt:""})]})]}),N.jsx(k7,{children:t.map((e,n)=>N.jsxs("li",{children:[N.jsxs("h3",{children:[N.jsx(K7,{start:0,end:e.value,duration:2.75,separator:","})," +"]}),N.jsx("p",{children:e.text})]},n))})]})};function Y7(t){return jr({tag:"svg",attr:{viewBox:"0 0 448 512"},child:[{tag:"path",attr:{d:"M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"},child:[]}]})(t)}function iP(t){return jr({tag:"svg",attr:{viewBox:"0 0 576 512"},child:[{tag:"path",attr:{d:"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"},child:[]}]})(t)}const X7=ue.button`
+`;var fE={},Bp=function(){return Bp=Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var i in e=arguments[n])Object.prototype.hasOwnProperty.call(e,i)&&(t[i]=e[i]);return t},Bp.apply(this,arguments)},R7=function(){function t(e,n,r){var i=this;this.endVal=n,this.options=r,this.version="2.8.0",this.defaults={startVal:0,decimalPlaces:0,duration:2,useEasing:!0,useGrouping:!0,useIndianSeparators:!1,smartEasingThreshold:999,smartEasingAmount:333,separator:",",decimal:".",prefix:"",suffix:"",enableScrollSpy:!1,scrollSpyDelay:200,scrollSpyOnce:!1},this.finalEndVal=null,this.useEasing=!0,this.countDown=!1,this.error="",this.startVal=0,this.paused=!0,this.once=!1,this.count=function(s){i.startTime||(i.startTime=s);var o=s-i.startTime;i.remaining=i.duration-o,i.useEasing?i.countDown?i.frameVal=i.startVal-i.easingFn(o,0,i.startVal-i.endVal,i.duration):i.frameVal=i.easingFn(o,i.startVal,i.endVal-i.startVal,i.duration):i.frameVal=i.startVal+(i.endVal-i.startVal)*(o/i.duration);var a=i.countDown?i.frameVal<i.endVal:i.frameVal>i.endVal;i.frameVal=a?i.endVal:i.frameVal,i.frameVal=Number(i.frameVal.toFixed(i.options.decimalPlaces)),i.printValue(i.frameVal),o<i.duration?i.rAF=requestAnimationFrame(i.count):i.finalEndVal!==null?i.update(i.finalEndVal):i.options.onCompleteCallback&&i.options.onCompleteCallback()},this.formatNumber=function(s){var o,a,l,c,d=s<0?"-":"";o=Math.abs(s).toFixed(i.options.decimalPlaces);var f=(o+="").split(".");if(a=f[0],l=f.length>1?i.options.decimal+f[1]:"",i.options.useGrouping){c="";for(var g=3,E=0,I=0,x=a.length;I<x;++I)i.options.useIndianSeparators&&I===4&&(g=2,E=1),I!==0&&E%g==0&&(c=i.options.separator+c),E++,c=a[x-I-1]+c;a=c}return i.options.numerals&&i.options.numerals.length&&(a=a.replace(/[0-9]/g,function(D){return i.options.numerals[+D]}),l=l.replace(/[0-9]/g,function(D){return i.options.numerals[+D]})),d+i.options.prefix+a+l+i.options.suffix},this.easeOutExpo=function(s,o,a,l){return a*(1-Math.pow(2,-10*s/l))*1024/1023+o},this.options=Bp(Bp({},this.defaults),r),this.formattingFn=this.options.formattingFn?this.options.formattingFn:this.formatNumber,this.easingFn=this.options.easingFn?this.options.easingFn:this.easeOutExpo,this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.endVal=this.validateValue(n),this.options.decimalPlaces=Math.max(this.options.decimalPlaces),this.resetDuration(),this.options.separator=String(this.options.separator),this.useEasing=this.options.useEasing,this.options.separator===""&&(this.options.useGrouping=!1),this.el=typeof e=="string"?document.getElementById(e):e,this.el?this.printValue(this.startVal):this.error="[CountUp] target is null or undefined",typeof window<"u"&&this.options.enableScrollSpy&&(this.error?console.error(this.error,e):(window.onScrollFns=window.onScrollFns||[],window.onScrollFns.push(function(){return i.handleScroll(i)}),window.onscroll=function(){window.onScrollFns.forEach(function(s){return s()})},this.handleScroll(this)))}return t.prototype.handleScroll=function(e){if(e&&window&&!e.once){var n=window.innerHeight+window.scrollY,r=e.el.getBoundingClientRect(),i=r.top+window.pageYOffset,s=r.top+r.height+window.pageYOffset;s<n&&s>window.scrollY&&e.paused?(e.paused=!1,setTimeout(function(){return e.start()},e.options.scrollSpyDelay),e.options.scrollSpyOnce&&(e.once=!0)):(window.scrollY>s||i>n)&&!e.paused&&e.reset()}},t.prototype.determineDirectionAndSmartEasing=function(){var e=this.finalEndVal?this.finalEndVal:this.endVal;this.countDown=this.startVal>e;var n=e-this.startVal;if(Math.abs(n)>this.options.smartEasingThreshold&&this.options.useEasing){this.finalEndVal=e;var r=this.countDown?1:-1;this.endVal=e+r*this.options.smartEasingAmount,this.duration=this.duration/2}else this.endVal=e,this.finalEndVal=null;this.finalEndVal!==null?this.useEasing=!1:this.useEasing=this.options.useEasing},t.prototype.start=function(e){this.error||(this.options.onStartCallback&&this.options.onStartCallback(),e&&(this.options.onCompleteCallback=e),this.duration>0?(this.determineDirectionAndSmartEasing(),this.paused=!1,this.rAF=requestAnimationFrame(this.count)):this.printValue(this.endVal))},t.prototype.pauseResume=function(){this.paused?(this.startTime=null,this.duration=this.remaining,this.startVal=this.frameVal,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count)):cancelAnimationFrame(this.rAF),this.paused=!this.paused},t.prototype.reset=function(){cancelAnimationFrame(this.rAF),this.paused=!0,this.resetDuration(),this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.printValue(this.startVal)},t.prototype.update=function(e){cancelAnimationFrame(this.rAF),this.startTime=null,this.endVal=this.validateValue(e),this.endVal!==this.frameVal&&(this.startVal=this.frameVal,this.finalEndVal==null&&this.resetDuration(),this.finalEndVal=null,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count))},t.prototype.printValue=function(e){var n;if(this.el){var r=this.formattingFn(e);!((n=this.options.plugin)===null||n===void 0)&&n.render?this.options.plugin.render(this.el,r):this.el.tagName==="INPUT"?this.el.value=r:this.el.tagName==="text"||this.el.tagName==="tspan"?this.el.textContent=r:this.el.innerHTML=r}},t.prototype.ensureNumber=function(e){return typeof e=="number"&&!isNaN(e)},t.prototype.validateValue=function(e){var n=Number(e);return this.ensureNumber(n)?n:(this.error="[CountUp] invalid start or end value: ".concat(e),null)},t.prototype.resetDuration=function(){this.startTime=null,this.duration=1e3*Number(this.options.duration),this.remaining=this.duration},t}();const P7=Object.freeze(Object.defineProperty({__proto__:null,CountUp:R7},Symbol.toStringTag,{value:"Module"})),N7=lN(P7);Object.defineProperty(fE,"__esModule",{value:!0});var Yt=G,O7=N7;function D7(t,e){var n=t==null?null:typeof Symbol<"u"&&t[Symbol.iterator]||t["@@iterator"];if(n!=null){var r,i,s,o,a=[],l=!0,c=!1;try{if(s=(n=n.call(t)).next,e===0){if(Object(n)!==n)return;l=!1}else for(;!(l=(r=s.call(n)).done)&&(a.push(r.value),a.length!==e);l=!0);}catch(d){c=!0,i=d}finally{try{if(!l&&n.return!=null&&(o=n.return(),Object(o)!==o))return}finally{if(c)throw i}}return a}}function jS(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter(function(i){return Object.getOwnPropertyDescriptor(t,i).enumerable})),n.push.apply(n,r)}return n}function zp(t){for(var e=1;e<arguments.length;e++){var n=arguments[e]!=null?arguments[e]:{};e%2?jS(Object(n),!0).forEach(function(r){F7(t,r,n[r])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):jS(Object(n)).forEach(function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(n,r))})}return t}function L7(t,e){if(typeof t!="object"||!t)return t;var n=t[Symbol.toPrimitive];if(n!==void 0){var r=n.call(t,e||"default");if(typeof r!="object")return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return(e==="string"?String:Number)(t)}function M7(t){var e=L7(t,"string");return typeof e=="symbol"?e:String(e)}function F7(t,e,n){return e=M7(e),e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function E_(){return E_=Object.assign?Object.assign.bind():function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t},E_.apply(this,arguments)}function V7(t,e){if(t==null)return{};var n={},r=Object.keys(t),i,s;for(s=0;s<r.length;s++)i=r[s],!(e.indexOf(i)>=0)&&(n[i]=t[i]);return n}function nP(t,e){if(t==null)return{};var n=V7(t,e),r,i;if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(t);for(i=0;i<s.length;i++)r=s[i],!(e.indexOf(r)>=0)&&Object.prototype.propertyIsEnumerable.call(t,r)&&(n[r]=t[r])}return n}function j7(t,e){return U7(t)||D7(t,e)||$7(t,e)||B7()}function U7(t){if(Array.isArray(t))return t}function $7(t,e){if(t){if(typeof t=="string")return US(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);if(n==="Object"&&t.constructor&&(n=t.constructor.name),n==="Map"||n==="Set")return Array.from(t);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return US(t,e)}}function US(t,e){(e==null||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function B7(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}var z7=typeof window<"u"&&typeof window.document<"u"&&typeof window.document.createElement<"u"?Yt.useLayoutEffect:Yt.useEffect;function Cr(t){var e=Yt.useRef(t);return z7(function(){e.current=t}),Yt.useCallback(function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return e.current.apply(void 0,r)},[])}var W7=function(e,n){var r=n.decimal,i=n.decimals,s=n.duration,o=n.easingFn,a=n.end,l=n.formattingFn,c=n.numerals,d=n.prefix,f=n.separator,g=n.start,E=n.suffix,I=n.useEasing,x=n.useGrouping,D=n.useIndianSeparators,S=n.enableScrollSpy,w=n.scrollSpyDelay,k=n.scrollSpyOnce,V=n.plugin;return new O7.CountUp(e,a,{startVal:g,duration:s,decimal:r,decimalPlaces:i,easingFn:o,formattingFn:l,numerals:c,separator:f,prefix:d,suffix:E,plugin:V,useEasing:I,useIndianSeparators:D,useGrouping:x,enableScrollSpy:S,scrollSpyDelay:w,scrollSpyOnce:k})},H7=["ref","startOnMount","enableReinitialize","delay","onEnd","onStart","onPauseResume","onReset","onUpdate"],q7={decimal:".",separator:",",delay:null,prefix:"",suffix:"",duration:2,start:0,decimals:0,startOnMount:!0,enableReinitialize:!0,useEasing:!0,useGrouping:!0,useIndianSeparators:!1},rP=function(e){var n=Object.fromEntries(Object.entries(e).filter(function(A){var P=j7(A,2),M=P[1];return M!==void 0})),r=Yt.useMemo(function(){return zp(zp({},q7),n)},[e]),i=r.ref,s=r.startOnMount,o=r.enableReinitialize,a=r.delay,l=r.onEnd,c=r.onStart,d=r.onPauseResume,f=r.onReset,g=r.onUpdate,E=nP(r,H7),I=Yt.useRef(),x=Yt.useRef(),D=Yt.useRef(!1),S=Cr(function(){return W7(typeof i=="string"?i:i.current,E)}),w=Cr(function(A){var P=I.current;if(P&&!A)return P;var M=S();return I.current=M,M}),k=Cr(function(){var A=function(){return w(!0).start(function(){l==null||l({pauseResume:V,reset:U,start:C,update:H})})};a&&a>0?x.current=setTimeout(A,a*1e3):A(),c==null||c({pauseResume:V,reset:U,update:H})}),V=Cr(function(){w().pauseResume(),d==null||d({reset:U,start:C,update:H})}),U=Cr(function(){w().el&&(x.current&&clearTimeout(x.current),w().reset(),f==null||f({pauseResume:V,start:C,update:H}))}),H=Cr(function(A){w().update(A),g==null||g({pauseResume:V,reset:U,start:C})}),C=Cr(function(){U(),k()}),b=Cr(function(A){s&&(A&&U(),k())});return Yt.useEffect(function(){D.current?o&&b(!0):(D.current=!0,b())},[o,D,b,a,e.start,e.suffix,e.prefix,e.duration,e.separator,e.decimals,e.decimal,e.formattingFn]),Yt.useEffect(function(){return function(){U()}},[U]),{start:C,pauseResume:V,reset:U,update:H,getCountUp:w}},G7=["className","redraw","containerProps","children","style"],K7=function(e){var n=e.className,r=e.redraw,i=e.containerProps,s=e.children,o=e.style,a=nP(e,G7),l=Yt.useRef(null),c=Yt.useRef(!1),d=rP(zp(zp({},a),{},{ref:l,startOnMount:typeof s!="function"||e.delay===0,enableReinitialize:!1})),f=d.start,g=d.reset,E=d.update,I=d.pauseResume,x=d.getCountUp,D=Cr(function(){f()}),S=Cr(function(V){e.preserveValue||g(),E(V)}),w=Cr(function(){if(typeof e.children=="function"&&!(l.current instanceof Element)){console.error(`Couldn't find attached element to hook the CountUp instance into! Try to attach "containerRef" from the render prop to a an Element, eg. <span ref={containerRef} />.`);return}x()});Yt.useEffect(function(){w()},[w]),Yt.useEffect(function(){c.current&&S(e.end)},[e.end,S]);var k=r&&e;return Yt.useEffect(function(){r&&c.current&&D()},[D,r,k]),Yt.useEffect(function(){!r&&c.current&&D()},[D,r,e.start,e.suffix,e.prefix,e.duration,e.separator,e.decimals,e.decimal,e.className,e.formattingFn]),Yt.useEffect(function(){c.current=!0},[]),typeof s=="function"?s({countUpRef:l,start:f,reset:g,update:E,pauseResume:I,getCountUp:x}):Yt.createElement("span",E_({className:n,ref:l,style:o},i),typeof e.start<"u"?x().formattingFn(e.start):"")},Q7=fE.default=K7;fE.useCountUp=rP;const Y7=()=>{const t=[{value:32e3,text:"Experienced tutors"},{value:3e5,text:"5-star tutor reviews"},{value:120,text:"Subjects taught"},{value:200,text:"Tutor nationalities"}];return N.jsxs(S7,{children:[N.jsxs(C7,{children:[N.jsxs(b7,{children:[N.jsxs("h1",{children:["Unlock your potential with the best ",N.jsx("span",{children:"language"})," tutors"]}),N.jsx("p",{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),N.jsx(x7,{to:"/teachers",children:"Get started"})]}),N.jsxs(k7,{id:"hero",children:[N.jsx("img",{src:T7,width:339,height:339,alt:""}),N.jsx("img",{src:I7,width:360,height:247,alt:""})]})]}),N.jsx(A7,{children:t.map((e,n)=>N.jsxs("li",{children:[N.jsxs("h3",{children:[N.jsx(Q7,{start:0,end:e.value,duration:2.75,separator:","})," +"]}),N.jsx("p",{children:e.text})]},n))})]})};function X7(t){return jr({tag:"svg",attr:{viewBox:"0 0 448 512"},child:[{tag:"path",attr:{d:"M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"},child:[]}]})(t)}function iP(t){return jr({tag:"svg",attr:{viewBox:"0 0 576 512"},child:[{tag:"path",attr:{d:"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"},child:[]}]})(t)}const J7=ue.button`
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -5192,7 +5192,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   &:focus {
     outline: none;
   }
-`,sP=()=>{const[t,e]=G.useState(!1),n=()=>{window.scrollTo({top:0,behavior:"smooth"})},r=()=>{window.pageYOffset>300?e(!0):e(!1)};return window.addEventListener("scroll",r),N.jsx(N.Fragment,{children:t&&N.jsx(X7,{onClick:n,children:N.jsx(Y7,{})})})},J7=ue.div`
+`,sP=()=>{const[t,e]=G.useState(!1),n=()=>{window.scrollTo({top:0,behavior:"smooth"})},r=()=>{window.pageYOffset>300?e(!0):e(!1)};return window.addEventListener("scroll",r),N.jsx(N.Fragment,{children:t&&N.jsx(J7,{onClick:n,children:N.jsx(X7,{})})})},Z7=ue.div`
   width: 1184px;
   display: flex;
   flex-direction: row;
@@ -5203,11 +5203,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   background-color: #fff;
   border-radius: 24px;
   margin-bottom: 32px;
-`,Z7=ue.img`
+`,eW=ue.img`
   border-radius: 50%;
   width: 96px;
   height: 96px;
-`,eW=ue.div`
+`,tW=ue.div`
   width: 968px;
   display: flex;
   flex-direction: column;
@@ -5219,7 +5219,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     font-family: 'Roboto-Medium', sans-serif;
     color: var(--primary-text-color);
   }
-`,tW=ue.div`
+`,nW=ue.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -5262,14 +5262,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   color: var(--subtitle-text-color);
   padding: 0;
   margin: 0;
-`,nW=ue(qp)`
+`,rW=ue(qp)`
   all: unset;
   text-decoration: underline;
   font-style: 16px;
   line-height: 24px;
   margin: 8px 0 24px 0;
   cursor: pointer;
-`,rW=ue.ul`
+`,iW=ue.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5283,14 +5283,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     margin: 0;
     border-radius: 35px;
   }
-`,iW=ue.div`
+`,sW=ue.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 4px;
   margin: 16px 0;
-`,sW=ue.button`
+`,oW=ue.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5313,21 +5313,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   border: none;
   padding: 0;
   margin: 0;
-`;const oW=ue.ul`
+`;const aW=ue.ul`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 32px;
   padding: 0;
-`,aW=ue.li`
+`,lW=ue.li`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 6px;
   padding: 0;
-`,lW=ue.div`
+`,uW=ue.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5340,7 +5340,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     height: 44px;
     border-radius: 50%;
   }
-`,uW=ue.div`
+`,cW=ue.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -5356,7 +5356,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding: 0;
     margin: 0;
   }
-`,cW=ue.div`
+`,hW=ue.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5367,7 +5367,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0em;
-`,hW=({reviews:t})=>N.jsx(oW,{children:t.map((e,n)=>N.jsxs(aW,{children:[N.jsxs(lW,{children:[e.reviewer_avatar?N.jsx("img",{src:e.reviewer_avatar,alt:"Reviewer Avatar"}):N.jsx(f4,{size:44}),N.jsxs(uW,{children:[N.jsx("p",{children:e.reviewer_name}),N.jsxs(cW,{children:[N.jsx(iP,{size:16,color:"#FFC531"}),N.jsx("p",{children:e.reviewer_rating})]})]})]}),N.jsx("p",{children:e.comment})]},n))}),dW=ue.div`
+`,dW=({reviews:t})=>N.jsx(aW,{children:t.map((e,n)=>N.jsxs(lW,{children:[N.jsxs(uW,{children:[e.reviewer_avatar?N.jsx("img",{src:e.reviewer_avatar,alt:"Reviewer Avatar"}):N.jsx(f4,{size:44}),N.jsxs(cW,{children:[N.jsx("p",{children:e.reviewer_name}),N.jsxs(hW,{children:[N.jsx(iP,{size:16,color:"#FFC531"}),N.jsx("p",{children:e.reviewer_rating})]})]})]}),N.jsx("p",{children:e.comment})]},n))}),fW=ue.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5383,14 +5383,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   border-radius: 30px;
   padding: 64px;
   margin: 0;
-`,fW=ue.button`
+`,pW=ue.button`
   position: absolute;
   top: 28px;
   right: 28px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-`,pW=ue.div`
+`,mW=ue.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -5414,7 +5414,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     line-height: 22px;
     margin: 0;
   }
-`,mW=ue.div`
+`,gW=ue.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -5447,7 +5447,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     color: var(--subtitle-text-color);
     margin-bottom: 4px;
   }
-`,gW=ue.form`
+`,yW=ue.form`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -5574,7 +5574,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   right: 0;
   font-size: 12px;
   color: red;
-`,yW=ue.button`
+`,vW=ue.button`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -5594,13 +5594,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   &:focus {
     background-color: var(--btn-hover-color);
   }
-`,vW=({isModalOpen:t,closeModal:e,teacher:n})=>{const r=_m().shape({name:ti().required("Name is required"),email:ti().email("Invalid email. Please enter a valid email").matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,"Invalid email").required("Email is required"),phone:ti().matches(/^\+?[0-9]*$/,"Phone number must be in format +380XXXXXXXXX").min(13,"Phone number must be in format +380XXXXXXXXX").required("Phone is required"),reason:ti().required("Reason is required")}),{register:i,handleSubmit:s,formState:{errors:o}}=F0({resolver:V0(r),mode:"onChange"}),a=dE(),l=c=>{console.log(c),e(),a("Thank you for your interest in learning English with us!","success")};return t?N.jsx(N.Fragment,{children:t&&N.jsx(W0,{onClose:e,children:N.jsxs(dW,{children:[N.jsx(fW,{onClick:e,children:N.jsx(H0,{size:32})}),N.jsxs(pW,{children:[N.jsx("h2",{children:"Book trial lesson"}),N.jsx("p",{children:"Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs."}),N.jsxs(mW,{children:[N.jsx("img",{src:n.avatar_url,alt:n.name}),N.jsxs("div",{children:[N.jsx("p",{children:"Your teacher"}),N.jsxs("h3",{children:[n.name," ",n.surname]})]})]})]}),N.jsxs(gW,{onSubmit:s(l),noValidate:!0,children:[N.jsxs("div",{className:"form-section",children:[N.jsx("h2",{children:"What is your main reason for learning English?"}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"career",...i("reason"),defaultChecked:!0}),"Career and business"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"kids",...i("reason")}),"Lesson for kids"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"abroad",...i("reason")}),"Living abroad"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"exams",...i("reason")}),"Exams and coursework"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"hobby",...i("reason")}),"Culture, travel or hobby"]}),o.reason&&N.jsx(Wd,{children:o.reason.message})]}),N.jsxs("div",{className:"form-section",children:[N.jsxs(Ty,{children:[N.jsx("input",{type:"text",...i("name"),className:o.name?"error":"",placeholder:" "}),N.jsx("label",{className:o.name?"error":"",children:"Name"}),o.name&&N.jsx(Wd,{children:o.name.message})]}),N.jsxs(Ty,{children:[N.jsx("input",{type:"email",...i("email"),className:o.email?"error":"",placeholder:" "}),N.jsx("label",{className:o.email?"error":"",children:"Email"}),o.email&&N.jsx(Wd,{children:o.email.message})]}),N.jsxs(Ty,{children:[N.jsx("input",{type:"tel",...i("phone"),className:o.phone?"error":"",placeholder:" "}),N.jsx("label",{className:o.phone?"error":"",children:"Phone"}),o.phone&&N.jsx(Wd,{children:o.phone.message})]})]}),N.jsx(yW,{type:"submit",children:"Book"})]})]})})}):null},$S=ue.button`
+`,_W=({isModalOpen:t,closeModal:e,teacher:n})=>{const r=_m().shape({name:ti().required("Name is required"),email:ti().email("Invalid email. Please enter a valid email").matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,"Invalid email").required("Email is required"),phone:ti().matches(/^\+?[0-9]*$/,"Phone number must be in format +380XXXXXXXXX").min(13,"Phone number must be in format +380XXXXXXXXX").required("Phone is required"),reason:ti().required("Reason is required")}),{register:i,handleSubmit:s,formState:{errors:o}}=F0({resolver:V0(r),mode:"onChange"}),a=dE(),l=c=>{console.log(c),e(),a("Thank you for your interest in learning English with us!","success")};return t?N.jsx(N.Fragment,{children:t&&N.jsx(W0,{onClose:e,children:N.jsxs(fW,{children:[N.jsx(pW,{onClick:e,children:N.jsx(H0,{size:32})}),N.jsxs(mW,{children:[N.jsx("h2",{children:"Book trial lesson"}),N.jsx("p",{children:"Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs."}),N.jsxs(gW,{children:[N.jsx("img",{src:n.avatar_url,alt:n.name}),N.jsxs("div",{children:[N.jsx("p",{children:"Your teacher"}),N.jsxs("h3",{children:[n.name," ",n.surname]})]})]})]}),N.jsxs(yW,{onSubmit:s(l),noValidate:!0,children:[N.jsxs("div",{className:"form-section",children:[N.jsx("h2",{children:"What is your main reason for learning English?"}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"career",...i("reason"),defaultChecked:!0}),"Career and business"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"kids",...i("reason")}),"Lesson for kids"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"abroad",...i("reason")}),"Living abroad"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"exams",...i("reason")}),"Exams and coursework"]}),N.jsxs(Fu,{children:[N.jsx("input",{type:"radio",value:"hobby",...i("reason")}),"Culture, travel or hobby"]}),o.reason&&N.jsx(Wd,{children:o.reason.message})]}),N.jsxs("div",{className:"form-section",children:[N.jsxs(Ty,{children:[N.jsx("input",{type:"text",...i("name"),className:o.name?"error":"",placeholder:" "}),N.jsx("label",{className:o.name?"error":"",children:"Name"}),o.name&&N.jsx(Wd,{children:o.name.message})]}),N.jsxs(Ty,{children:[N.jsx("input",{type:"email",...i("email"),className:o.email?"error":"",placeholder:" "}),N.jsx("label",{className:o.email?"error":"",children:"Email"}),o.email&&N.jsx(Wd,{children:o.email.message})]}),N.jsxs(Ty,{children:[N.jsx("input",{type:"tel",...i("phone"),className:o.phone?"error":"",placeholder:" "}),N.jsx("label",{className:o.phone?"error":"",children:"Phone"}),o.phone&&N.jsx(Wd,{children:o.phone.message})]})]}),N.jsx(vW,{type:"submit",children:"Book"})]})]})})}):null},$S=ue.button`
   border: none;
   padding: 0;
   margin: 0;
   background-color: transparent;
   cursor: pointer;
-`,_W=({teacher:t})=>{const[e,n]=G.useState(!1),[r,i]=G.useState(null),s=vh(),o=la();G.useEffect(()=>{iw(s,l=>{i(l)})},[s]),G.useEffect(()=>{r&&(async()=>{if(r){const c=Fp($p,"users",r.uid),d=await NS(c);if(d.exists()){const f=d.data();n(f.favorites.some(g=>g.id===t.id))}}})()},[r,t.id]);const a=async()=>{if(!r){tP.fire({icon:"error",title:"Oops...",text:"You must be logged in to add favorites",confirmButtonColor:"var(--btn-color)"});return}const l=Fp($p,"users",r.uid),c=await NS(l);if(c.exists()){const f=c.data().favorites||[];if(f.findIndex(E=>E.id===t.id)!==-1){const E=f.filter(I=>I.id!==t.id);await OS(l,{favorites:E}),n(!1)}else await OS(l,{favorites:kz(t)}),n(!0)}};return o.pathname==="/teachers"?N.jsx($S,{onClick:a,children:e?N.jsx(p4,{size:22,style:{color:"var(--btn-color)"}}):N.jsx(g4,{size:22,style:{color:"var(--btn-color)"}})}):N.jsx($S,{onClick:a,children:N.jsx(m4,{size:22,style:{color:"var(--btn-color)"}})})},oP=({teacher:t,selectedLevel:e})=>{const n=t.languages.reduce((d,f,g)=>g<t.languages.length-1?[...d,N.jsx("span",{children:f},g),", "]:[...d,N.jsx("span",{children:f},g)],[]),[r,i]=G.useState(!1),[s,o]=G.useState(!1),a=()=>{o(!0)},l=()=>{o(!1)},c=()=>{i(!r)};return N.jsxs(J7,{children:[N.jsx(Z7,{src:t.avatar_url,alt:t.name}),N.jsxs(eW,{children:[N.jsxs(tW,{children:[N.jsx(zd,{style:{marginRight:"192px"},children:"Languages"}),N.jsxs("ul",{children:[N.jsx("li",{children:N.jsx("p",{children:"Lessons online"})}),N.jsx("li",{children:N.jsxs("p",{children:["Lessons done: ",t.lessons_done]})}),N.jsxs("li",{children:[N.jsx(iP,{size:16,color:"#FFC531"}),N.jsxs("p",{children:["Rating: ",t.rating]})]}),N.jsx("li",{children:N.jsxs("p",{children:["Price/1 hour: ",N.jsxs("span",{children:["$",t.price_per_hour]})]})})]}),N.jsx(_W,{teacher:t})]}),N.jsxs("h3",{children:[t.name," ",t.surname]}),N.jsxs(zd,{children:["Speaks: ",N.jsx("span",{children:n})]}),N.jsxs(zd,{children:["Lesson Info: ",N.jsxs("span",{children:[" ",t.lesson_info]})]}),N.jsxs(zd,{children:["Conditions: ",N.jsx("span",{children:t.conditions})]}),!r&&N.jsx(nW,{onClick:c,children:"Read more"}),r&&N.jsxs(iW,{children:[N.jsx("p",{children:t.experience}),N.jsx(hW,{reviews:t.reviews})]}),N.jsx(rW,{children:t.levels.map((d,f)=>N.jsxs("li",{style:{backgroundColor:e===d?"var(--btn-color)":"#fff",border:e===d?"none":"1px solid rgba(12, 14, 17, 0.2)"},children:["#",d]},f))}),r&&N.jsx(sW,{onClick:a,children:"Book trial lesson"}),s&&N.jsx(vW,{isModalOpen:s,closeModal:l,teacher:t})]})]})},wW=ue.div`
+`,wW=({teacher:t})=>{const[e,n]=G.useState(!1),[r,i]=G.useState(null),s=vh(),o=la();G.useEffect(()=>{iw(s,l=>{i(l)})},[s]),G.useEffect(()=>{r&&(async()=>{if(r){const c=Fp($p,"users",r.uid),d=await NS(c);if(d.exists()){const f=d.data();n(f.favorites.some(g=>g.id===t.id))}}})()},[r,t.id]);const a=async()=>{if(!r){tP.fire({icon:"error",title:"Oops...",text:"You must be logged in to add favorites",confirmButtonColor:"var(--btn-color)"});return}const l=Fp($p,"users",r.uid),c=await NS(l);if(c.exists()){const f=c.data().favorites||[];if(f.findIndex(E=>E.id===t.id)!==-1){const E=f.filter(I=>I.id!==t.id);await OS(l,{favorites:E}),n(!1)}else await OS(l,{favorites:kz(t)}),n(!0)}};return o.pathname==="/teachers"?N.jsx($S,{onClick:a,children:e?N.jsx(p4,{size:22,style:{color:"var(--btn-color)"}}):N.jsx(g4,{size:22,style:{color:"var(--btn-color)"}})}):N.jsx($S,{onClick:a,children:N.jsx(m4,{size:22,style:{color:"var(--btn-color)"}})})},oP=({teacher:t,selectedLevel:e})=>{const n=t.languages.reduce((d,f,g)=>g<t.languages.length-1?[...d,N.jsx("span",{children:f},g),", "]:[...d,N.jsx("span",{children:f},g)],[]),[r,i]=G.useState(!1),[s,o]=G.useState(!1),a=()=>{o(!0)},l=()=>{o(!1)},c=()=>{i(!r)};return N.jsxs(Z7,{children:[N.jsx(eW,{src:t.avatar_url,alt:t.name}),N.jsxs(tW,{children:[N.jsxs(nW,{children:[N.jsx(zd,{style:{marginRight:"192px"},children:"Languages"}),N.jsxs("ul",{children:[N.jsx("li",{children:N.jsx("p",{children:"Lessons online"})}),N.jsx("li",{children:N.jsxs("p",{children:["Lessons done: ",t.lessons_done]})}),N.jsxs("li",{children:[N.jsx(iP,{size:16,color:"#FFC531"}),N.jsxs("p",{children:["Rating: ",t.rating]})]}),N.jsx("li",{children:N.jsxs("p",{children:["Price/1 hour: ",N.jsxs("span",{children:["$",t.price_per_hour]})]})})]}),N.jsx(wW,{teacher:t})]}),N.jsxs("h3",{children:[t.name," ",t.surname]}),N.jsxs(zd,{children:["Speaks: ",N.jsx("span",{children:n})]}),N.jsxs(zd,{children:["Lesson Info: ",N.jsxs("span",{children:[" ",t.lesson_info]})]}),N.jsxs(zd,{children:["Conditions: ",N.jsx("span",{children:t.conditions})]}),!r&&N.jsx(rW,{onClick:c,children:"Read more"}),r&&N.jsxs(sW,{children:[N.jsx("p",{children:t.experience}),N.jsx(dW,{reviews:t.reviews})]}),N.jsx(iW,{children:t.levels.map((d,f)=>N.jsxs("li",{style:{backgroundColor:e===d?"var(--btn-color)":"#fff",border:e===d?"none":"1px solid rgba(12, 14, 17, 0.2)"},children:["#",d]},f))}),r&&N.jsx(oW,{onClick:a,children:"Book trial lesson"}),s&&N.jsx(_W,{isModalOpen:s,closeModal:l,teacher:t})]})]})},EW=ue.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -5641,9 +5641,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   option {
     padding: 8px;
   }
-`,EW=({teachers:t,onFilterChange:e})=>{const[n,r]=G.useState([]),[i,s]=G.useState([]),[o,a]=G.useState([]),[l,c]=G.useState(""),[d,f]=G.useState(""),[g,E]=G.useState("");G.useEffect(()=>{const S=new Set,w=new Set,k=new Set;t.forEach(V=>{V.languages.forEach(U=>S.add(U)),V.levels.forEach(U=>w.add(U)),k.add(V.price_per_hour)}),r(Array.from(S)),s(Array.from(w)),a(Array.from(k).sort((V,U)=>V-U))},[t]);const I=S=>{c(S.target.value),e({language:S.target.value,level:d,price:g})},x=S=>{f(S.target.value),e({language:l,level:S.target.value,price:g})},D=S=>{E(S.target.value),e({language:l,level:d,price:S.target.value})};return N.jsxs(wW,{children:[N.jsxs(Iy,{children:[N.jsx("label",{children:"Languages"}),N.jsxs("select",{onChange:I,value:l,children:[N.jsx("option",{value:"",children:"All"}),n.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]}),N.jsxs(Iy,{children:[N.jsx("label",{children:"Level of knowledge"}),N.jsxs("select",{onChange:x,value:d,children:[N.jsx("option",{value:"",children:"All"}),i.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]}),N.jsxs(Iy,{children:[N.jsx("label",{children:"Price"}),N.jsxs("select",{onChange:D,value:g,children:[N.jsx("option",{value:"",children:"All"}),o.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]})]})},TW=ue.div`
+`,TW=({teachers:t,onFilterChange:e})=>{const[n,r]=G.useState([]),[i,s]=G.useState([]),[o,a]=G.useState([]),[l,c]=G.useState(""),[d,f]=G.useState(""),[g,E]=G.useState("");G.useEffect(()=>{const S=new Set,w=new Set,k=new Set;t.forEach(V=>{V.languages.forEach(U=>S.add(U)),V.levels.forEach(U=>w.add(U)),k.add(V.price_per_hour)}),r(Array.from(S)),s(Array.from(w)),a(Array.from(k).sort((V,U)=>V-U))},[t]);const I=S=>{c(S.target.value),e({language:S.target.value,level:d,price:g})},x=S=>{f(S.target.value),e({language:l,level:S.target.value,price:g})},D=S=>{E(S.target.value),e({language:l,level:d,price:S.target.value})};return N.jsxs(EW,{children:[N.jsxs(Iy,{children:[N.jsx("label",{children:"Languages"}),N.jsxs("select",{onChange:I,value:l,children:[N.jsx("option",{value:"",children:"All"}),n.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]}),N.jsxs(Iy,{children:[N.jsx("label",{children:"Level of knowledge"}),N.jsxs("select",{onChange:x,value:d,children:[N.jsx("option",{value:"",children:"All"}),i.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]}),N.jsxs(Iy,{children:[N.jsx("label",{children:"Price"}),N.jsxs("select",{onChange:D,value:g,children:[N.jsx("option",{value:"",children:"All"}),o.map((S,w)=>N.jsx("option",{value:S,children:S},w))]})]})]})},IW=ue.div`
   margin: 48px 64px;
-`,IW=ue.button`
+`,SW=ue.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5663,12 +5663,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   &:hover {
     background-color: var(--btn-hover-color);
   }
-`,SW=()=>{const[t,e]=G.useState(4),[n,r]=G.useState([]),[i,s]=G.useState([]),[o,a]=G.useState("");G.useEffect(()=>{const d=h$(o7,"teachers");f$(d,f=>{const g=f.val();if(g){const E=Object.values(g);r(E),s(E)}})},[]);const l=()=>{e(d=>d+4)},c=d=>{const{language:f,level:g,price:E}=d;let I=n;f&&(I=I.filter(x=>x.languages.includes(f))),g&&(I=I.filter(x=>x.levels.includes(g))),E&&(I=I.filter(x=>x.price_per_hour===Number(E))),a(g),s(I),e(4)};return N.jsxs(TW,{children:[N.jsx(EW,{teachers:n,onFilterChange:c}),i.slice(0,t).map((d,f)=>N.jsx(oP,{teacher:d,selectedLevel:o},f)),t<i.length&&N.jsx(IW,{onClick:l,children:"Load More"})]})},CW=()=>N.jsxs(N.Fragment,{children:[N.jsx(SW,{}),N.jsx(sP,{})]}),bW=()=>vh().currentUser?N.jsx(oC,{}):N.jsx(vO,{to:"/",replace:!0}),xW=()=>{const[t,e]=G.useState([]),[n,r]=G.useState(!0),[i,s]=G.useState(null),o=vh();return G.useEffect(()=>{let a;const c=iw(o,d=>{if(d){const f=Fp($p,"users",d.uid);a=xz(f,g=>{if(g.exists()){const E=g.data().favorites||[];e(E)}else s("No favorites found"),e([]);r(!1)},g=>{console.error("Error fetching favorites:",g),s("Failed to fetch favorites"),r(!1)})}else r(!1),s("User not authenticated")});return()=>{a&&a(),c()}},[o]),n?N.jsx("div",{children:"Loading..."}):i?N.jsxs("div",{children:["Somethng went wrong: ",i]}):N.jsxs("div",{children:[N.jsxs("h2",{children:["Favorites teachers [",t.length,"]:"]}),N.jsx("ul",{children:t.map((a,l)=>N.jsx("li",{children:N.jsx(oP,{teacher:a})},l))})]})},kW=()=>N.jsxs(N.Fragment,{children:[N.jsx(xW,{}),N.jsx(sP,{})]}),AW=Fc.div`
+`,CW=()=>{const[t,e]=G.useState(4),[n,r]=G.useState([]),[i,s]=G.useState([]),[o,a]=G.useState("");G.useEffect(()=>{const d=h$(o7,"teachers");f$(d,f=>{const g=f.val();if(g){const E=Object.values(g);r(E),s(E)}})},[]);const l=()=>{e(d=>d+4)},c=d=>{const{language:f,level:g,price:E}=d;let I=n;f&&(I=I.filter(x=>x.languages.includes(f))),g&&(I=I.filter(x=>x.levels.includes(g))),E&&(I=I.filter(x=>x.price_per_hour===Number(E))),a(g),s(I),e(4)};return N.jsxs(IW,{children:[N.jsx(TW,{teachers:n,onFilterChange:c}),i.slice(0,t).map((d,f)=>N.jsx(oP,{teacher:d,selectedLevel:o},f)),t<i.length&&N.jsx(SW,{onClick:l,children:"Load More"})]})},bW=()=>N.jsxs(N.Fragment,{children:[N.jsx(CW,{}),N.jsx(sP,{})]}),xW=()=>vh().currentUser?N.jsx(oC,{}):N.jsx(vO,{to:"/",replace:!0}),kW=()=>{const[t,e]=G.useState([]),[n,r]=G.useState(!0),[i,s]=G.useState(null),o=vh();return G.useEffect(()=>{let a;const c=iw(o,d=>{if(d){const f=Fp($p,"users",d.uid);a=xz(f,g=>{if(g.exists()){const E=g.data().favorites||[];e(E)}else s("No favorites found"),e([]);r(!1)},g=>{console.error("Error fetching favorites:",g),s("Failed to fetch favorites"),r(!1)})}else r(!1),s("User not authenticated")});return()=>{a&&a(),c()}},[o]),n?N.jsx("div",{children:"Loading..."}):i?N.jsxs("div",{children:["Somethng went wrong: ",i]}):N.jsxs("div",{children:[N.jsxs("h2",{children:["Favorites teachers [",t.length,"]:"]}),N.jsx("ul",{children:t.map((a,l)=>N.jsx("li",{children:N.jsx(oP,{teacher:a})},l))})]})},AW=()=>N.jsxs(N.Fragment,{children:[N.jsx(kW,{}),N.jsx(sP,{})]}),RW=Fc.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 500px;
-`,RW=Fc.h1`
+`,PW=Fc.h1`
   color: #ffffff;
   text-shadow:
     0 0 5px #00baff,
@@ -5676,7 +5676,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     0 0 20px #00baff,
     0 0 40px #00baff,
     0 0 80px #00baff;
-`,PW=()=>N.jsx(AW,{children:N.jsx(RW,{children:"404"})});function NW(){return N.jsx(AM,{children:N.jsx(wO,{children:N.jsxs(ko,{path:"/",element:N.jsx(w7,{}),children:[N.jsx(ko,{index:!0,element:N.jsx(Q7,{})}),N.jsx(ko,{path:"teachers",element:N.jsx(CW,{})}),N.jsx(ko,{element:N.jsx(bW,{}),children:N.jsx(ko,{path:"favorites",element:N.jsx(kW,{})})}),N.jsx(ko,{path:"*",element:N.jsx(PW,{})})]})})})}const OW="/learn-lingo/assets/Roboto-Bold-ec685a46.ttf",DW="/learn-lingo/assets/Roboto-Medium-9d0d55a3.ttf",LW="/learn-lingo/assets/Roboto-Regular-4e147ab6.ttf",MW=RF`
+`,NW=()=>N.jsx(RW,{children:N.jsx(PW,{children:"404"})});function OW(){return N.jsx(AM,{children:N.jsx(wO,{children:N.jsxs(ko,{path:"/",element:N.jsx(E7,{}),children:[N.jsx(ko,{index:!0,element:N.jsx(Y7,{})}),N.jsx(ko,{path:"teachers",element:N.jsx(bW,{})}),N.jsx(ko,{element:N.jsx(xW,{}),children:N.jsx(ko,{path:"favorites",element:N.jsx(AW,{})})}),N.jsx(ko,{path:"*",element:N.jsx(NW,{})})]})})})}const DW="/learn-lingo/assets/Roboto-Bold-ec685a46.ttf",LW="/learn-lingo/assets/Roboto-Medium-9d0d55a3.ttf",MW="/learn-lingo/assets/Roboto-Regular-4e147ab6.ttf",FW=RF`
 :root {
   --primary-text-color: #121417;
   --secondary-text-color: #757575;
@@ -5704,19 +5704,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-family: 'Roboto-Bold';
   font-weight: 700;
   font-style: normal;
-  src: url(${OW}) format('truetype');
+  src: url(${DW}) format('truetype');
 }
 @font-face {
   font-family: 'Roboto-Medium';
   font-weight: 600;
   font-style: normal;
-  src: url(${DW}) format('truetype');
+  src: url(${LW}) format('truetype');
 }
 @font-face {
   font-family: 'Roboto-Regular';
   font-weight: 400;
   font-style: normal;
-  src: url(${LW}) format('truetype');
+  src: url(${MW}) format('truetype');
 }
 
 body {
@@ -5755,4 +5755,4 @@ img {
 button {
   cursor: pointer;
 }
-`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/learn-lingo/",children:N.jsxs(a7,{children:[N.jsx(MW,{}),N.jsx(NW,{})]})})}));
+`;ky.createRoot(document.getElementById("root")).render(N.jsx(We.StrictMode,{children:N.jsx(bO,{basename:"/learn-lingo/",children:N.jsxs(a7,{children:[N.jsx(FW,{}),N.jsx(OW,{})]})})}));
