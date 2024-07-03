@@ -8,9 +8,11 @@ const SharedLayout = () => {
   return (
     <Wrapper>
       <Header />
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </Wrapper>
   );
 };
