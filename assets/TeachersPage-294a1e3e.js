@@ -1,4 +1,4 @@
-import{p as m,r as s,j as e,a as w,o as A,d as E}from"./index-d9f30cb5.js";import{T as P,S as k}from"./TeacherCard-ee779396.js";const F=m.div`
+import{p as m,r as s,j as e,a as w,o as A,d as E}from"./index-addbfb01.js";import{T as P,S as k}from"./TeacherCard-32aa4d71.js";const F=m.div`
   width: 100%;
   display: flex;
   flex-direction: row;
