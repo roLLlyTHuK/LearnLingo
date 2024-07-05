@@ -10,28 +10,37 @@ export const Container = styled.section`
 
 export const TopWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 0;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
 `;
 
 export const HeroContent = styled.div`
+  width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
-  padding: 98px 64px;
-  gap: 32px;
-  width: 720px;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
 
   h1 {
+    width: 100%;
     font-family: 'Roboto-Medium';
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 600;
-    line-height: 56px;
+    line-height: 42px;
     letter-spacing: -0.02em;
-    text-align: left;
+    text-align: center;
     color: var(--primary-text-color);
 
     span {
@@ -65,7 +74,23 @@ export const HeroContent = styled.div`
   }
 
   p {
-    width: 471px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    align-items: start;
+    gap: 32px;
+    width: 720px;
+    padding: 98px 64px;
+
+    h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    p {
+      width: 471px;
+    }
   }
 `;
 
@@ -93,24 +118,25 @@ export const HeroImageBox = styled.div`
   display: block;
   position: relative;
   background-color: var(--bg-secondary-color);
-  width: 568px;
-  height: 530px;
+  width: 320px;
+  height: 320px;
   border-radius: 30px;
   overflow: hidden;
 
   img {
     position: absolute;
+    width: 100%;
   }
 
   img:nth-child(1) {
-    top: 80px;
-    left: 114px;
-    animation: greeting 1.5s ease-in-out;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @keyframes greeting {
     0% {
-      transform: translateY(50%);
+      transform: translateX(50%);
     }
     100% {
       transform: translateX(0);
@@ -118,8 +144,43 @@ export const HeroImageBox = styled.div`
   }
 
   img:nth-child(2) {
-    top: 354px;
-    left: 103.64px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 568px;
+    height: 530px;
+    img {
+      position: absolute;
+    }
+
+    img:nth-child(1) {
+      width: 339px;
+      height: 339px;
+      top: 80px;
+      left: 114px;
+      transform: translate(0, 0);
+      animation: greeting 1.5s ease-in-out;
+    }
+
+    @keyframes greeting {
+      0% {
+        transform: translateY(50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    img:nth-child(2) {
+      width: 360px;
+      height: 247px;
+      top: 354px;
+      left: 103.64px;
+      transform: translate(0, 0);
+    }
   }
 `;
 
