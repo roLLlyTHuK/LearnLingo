@@ -187,11 +187,11 @@ export const HeroImageBox = styled.div`
 export const List = styled.ul`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
-  padding: 40px 123px;
+  gap: 8px;
+  padding: 24px;
   margin: 0 auto;
   border: 1.5px dashed var(--btn-color);
   border-radius: 30px;
@@ -207,8 +207,8 @@ export const List = styled.ul`
 
   h3 {
     font-family: 'Roboto-Medium', sans-serif;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 16px;
     letter-spacing: -0.02em;
     text-align: left;
     color: var(--primary-text-color);
@@ -219,12 +219,28 @@ export const List = styled.ul`
   p {
     width: 74px;
     font-family: 'Roboto-Regular', sans-serif;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 10px;
+    line-height: 12px;
     letter-spacing: -0.02em;
     text-align: left;
     color: rgba(18, 20, 23, 0.7);
     padding: 0;
     margin: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    gap: 100px;
+    padding: 40px 123px;
+
+    h3 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 `;
