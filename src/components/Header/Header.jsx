@@ -17,32 +17,20 @@ import { useAuth } from '../../context/AuthContext';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 export const Header = () => {
-  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
-  const [isSignUpFormOpen, setIsSignUpFormOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState({ login: false, signUp: false });
   const location = useLocation();
   const navigate = useNavigate();
   const { currentUser, logout } = useAuth();
 
-  const openLoginForm = () => {
-    setIsLoginFormOpen(true);
-  };
-
-  const closeLoginForm = () => {
-    setIsLoginFormOpen(false);
-  };
-
-  const openSignUpForm = () => {
-    setIsSignUpFormOpen(true);
-  };
-
-  const closeSignUpForm = () => {
-    setIsSignUpFormOpen(false);
+  const handleToggleForm = (formType) => {
+    setIsOpen((prevOpen) => ({ ...prevOpen, [formType]: !prevOpen[formType] }));
   };
 
   const handleLogout = () => {
     logout();
     navigate('/');
   };
+
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -95,23 +83,25 @@ export const Header = () => {
           </>
         ) : (
           <>
-            <LoginBox onClick={openLoginForm}>
+            <LoginBox onClick={() => handleToggleForm('login')}>
               <FiLogIn size={20} color={'#f4c550'} />
               <span>Login</span>
             </LoginBox>
-            {isLoginFormOpen && (
+            {isOpen.login && (
               <LoginForm
-                isModalOpen={isLoginFormOpen}
-                closeModal={closeLoginForm}
+                isModalOpen={isOpen.login}
+                closeModal={() => handleToggleForm('login')}
               />
             )}
 
-            <SignupBtn onClick={openSignUpForm}>Registration</SignupBtn>
+            <SignupBtn onClick={() => handleToggleForm('signUp')}>
+              Registration
+            </SignupBtn>
 
-            {isSignUpFormOpen && (
+            {isOpen.signUp && (
               <RegistrationForm
-                isModalOpen={isSignUpFormOpen}
-                closeModal={closeSignUpForm}
+                isModalOpen={isOpen.signUp}
+                closeModal={() => handleToggleForm('signUp')}
               />
             )}
           </>

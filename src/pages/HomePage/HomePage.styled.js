@@ -129,17 +129,17 @@ export const HeroImageBox = styled.div`
   }
 
   img:nth-child(1) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 5px;
+    left: 10px;
+    animation: greeting 1.5s ease-in-out;
   }
 
   @keyframes greeting {
     0% {
-      transform: translateX(50%);
+      transform: translateY(50%);
     }
     100% {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 
@@ -161,7 +161,6 @@ export const HeroImageBox = styled.div`
       height: 339px;
       top: 80px;
       left: 114px;
-      transform: translate(0, 0);
       animation: greeting 1.5s ease-in-out;
     }
 
